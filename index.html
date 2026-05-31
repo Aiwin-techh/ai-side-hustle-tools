@@ -196,12 +196,47 @@ main{
   background:var(--paper);
   border:1px solid var(--line);
   border-radius:18px;
-  padding:18px 24px;
+  padding:0;
   font-weight:700;
   line-height:1.6;
   box-shadow:0 12px 28px rgba(20,40,30,.07);
-  overflow-x:auto;
+  overflow:hidden;
   white-space:nowrap;
+}
+
+.movers-track{
+  display:inline-flex;
+  align-items:center;
+  gap:28px;
+  min-width:max-content;
+  padding:18px 0;
+  animation:moverTicker 28s linear infinite;
+}
+
+.movers-bar:hover .movers-track{
+  animation-play-state:paused;
+}
+
+.mover-item{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  padding:0 4px;
+}
+
+.mover-ticker{
+  color:var(--green-dark);
+  font-weight:800;
+}
+
+.mover-move{
+  font-weight:800;
+  animation:numberPulse 1.8s ease-in-out infinite;
+}
+
+.mover-note{
+  color:var(--muted);
+  font-weight:700;
 }
 
 .up{
@@ -210,6 +245,16 @@ main{
 
 .down{
   color:#c92a2a;
+}
+
+@keyframes moverTicker{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
+}
+
+@keyframes numberPulse{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.08)}
 }
 
 .buttons{
@@ -297,9 +342,109 @@ footer{
 }
 
 @media(max-width:850px){
-  nav{display:none}
-  main{width:92%}
-  .assistant-row{flex-direction:column}
+  header{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:14px;
+    padding:16px 5%;
+    position:relative;
+  }
+
+  nav{
+    width:100%;
+    display:flex;
+    gap:10px;
+    overflow-x:auto;
+    padding-bottom:4px;
+    -webkit-overflow-scrolling:touch;
+  }
+
+  nav a{
+    margin-left:0;
+    flex:0 0 auto;
+    background:rgba(255,255,255,.1);
+    padding:9px 12px;
+    border-radius:999px;
+    font-size:.82rem;
+  }
+
+  .hero{
+    padding:56px 5% 84px;
+  }
+
+  .hero h1{
+    font-size:clamp(2.4rem,13vw,4rem);
+  }
+
+  main{
+    width:92%;
+    padding-top:30px;
+  }
+
+  .stats{
+    grid-template-columns:1fr;
+    margin-top:-56px;
+  }
+
+  .section-head{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:6px;
+    margin:34px 0 14px;
+  }
+
+  .section-head h2{
+    font-size:1.75rem;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .assistant-row{
+    flex-direction:column;
+  }
+
+  .btn,
+  button{
+    width:100%;
+    text-align:center;
+  }
+
+  .buttons{
+    flex-direction:column;
+  }
+
+  .movers-track{
+    animation-duration:22s;
+    gap:20px;
+    padding:16px 0;
+  }
+}
+
+@media(max-width:520px){
+  .logo{
+    font-size:1.35rem;
+  }
+
+  .hero-buttons{
+    flex-direction:column;
+  }
+
+  .card,
+  .stat,
+  .assistant-box{
+    padding:18px;
+    border-radius:18px;
+  }
+
+  .preview{
+    height:125px;
+  }
+
+  footer{
+    padding:28px 18px;
+  }
 }
 </style>
 </head>
@@ -675,13 +820,32 @@ function askAssistant(){
 }
 
 const movers = [
-  { ticker:"NVDA", move:"+4.8%", type:"up" },
-  { ticker:"TSLA", move:"-3.6%", type:"down" },
-  { ticker:"AAPL", move:"+2.1%", type:"up" },
-  { ticker:"AMZN", move:"-2.4%", type:"down" },
-  { ticker:"META", move:"+3.2%", type:"up" },
-  { ticker:"MSFT", move:"+1.8%", type:"up" }
+  { ticker:"NVDA", move:4.8 },
+  { ticker:"TSLA", move:-3.6 },
+  { ticker:"AAPL", move:2.1 },
+  { ticker:"AMZN", move:-2.4 },
+  { ticker:"META", move:3.2 },
+  { ticker:"MSFT", move:1.8 }
 ];
+
+function formatMove(value){
+  return `${value >= 0 ? "+" : ""}${value.toFixed(1)}%`;
+}
+
+function moverLine(){
+  return movers.map(stock => {
+    const type = stock.move >= 0 ? "up" : "down";
+
+    return `
+      <span class="mover-item">
+        <span class="mover-ticker">${stock.ticker}</span>
+        <span class="mover-move ${type}" data-ticker="${stock.ticker}">
+          ${formatMove(stock.move)}
+        </span>
+      </span>
+    `;
+  }).join("");
+}
 
 function loadMarketMovers(){
 
@@ -689,19 +853,40 @@ function loadMarketMovers(){
 
   if(!grid) return;
 
+  const line = `
+    ${moverLine()}
+    <span class="mover-note">Daily market movers — sample values only; verify current market data before investing.</span>
+  `;
+
   grid.innerHTML = `
-    <div class="movers-bar">
-      ${movers.map(stock =>
-        `<span class="${stock.type}">
-          ${stock.ticker} ${stock.move}
-        </span>`
-      ).join(" • ")}
-      — Daily market movers. Sample values only; verify current market data before investing.
+    <div class="movers-bar" aria-label="Daily market movers ticker">
+      <div class="movers-track">
+        ${line}
+        ${line}
+      </div>
     </div>
   `;
 }
 
+function updateMoverNumbers(){
+  movers.forEach(stock => {
+    const drift = (Math.random() - 0.5) * 0.4;
+    stock.move = Math.max(-9.9, Math.min(9.9, stock.move + drift));
+  });
+
+  document.querySelectorAll(".mover-move").forEach(item => {
+    const stock = movers.find(entry => entry.ticker === item.dataset.ticker);
+
+    if(!stock) return;
+
+    const type = stock.move >= 0 ? "up" : "down";
+    item.textContent = formatMove(stock.move);
+    item.className = `mover-move ${type}`;
+  });
+}
+
 loadMarketMovers();
+setInterval(updateMoverNumbers, 3000);
 
 </script>
 
