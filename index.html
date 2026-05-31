@@ -831,205 +831,167 @@ footer{
   }
 }
 
+
+/* Final simplification pass */
+.hero h1{
+  font-size:clamp(1.55rem,3.2vw,2.85rem);
+  line-height:1.08;
+  margin:8px 0 10px;
+  letter-spacing:.02em;
+  text-transform:uppercase;
+  font-weight:900;
+}
+
+.top-picks-list{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:12px;
+}
+
+.top-pick-row{
+  display:flex;
+  flex-direction:column;
+  gap:5px;
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:16px;
+  color:var(--text);
+  text-decoration:none;
+  box-shadow:0 8px 22px rgba(21,48,38,.05);
+  transition:transform .15s ease, border-color .15s ease;
+}
+
+.top-pick-row:hover{
+  transform:translateY(-2px);
+  border-color:var(--gold);
+}
+
+.pick-title{
+  font-weight:900;
+  color:var(--green-dark);
+}
+
+.pick-desc{
+  color:var(--muted);
+  font-size:.9rem;
+  line-height:1.45;
+}
+
+.pick-badge{
+  align-self:flex-start;
+  background:var(--green-soft);
+  color:var(--green-dark);
+  border-radius:999px;
+  padding:5px 9px;
+  font-size:.72rem;
+  font-weight:900;
+  margin-top:3px;
+}
+
+.accordion{
+  margin:14px 0;
+}
+
+.accordion summary{
+  font-size:1.03rem;
+}
+
+@media(max-width:700px){
+  .top-picks-list{
+    grid-template-columns:1fr;
+  }
+}
 </style>
 </head>
 <body>
 <header>
 <div class="logo">Capital Library</div>
 <nav>
-  <a href="#market-movers">Movers</a>
-  <a href="#popular">Top Picks</a>
-  <a href="#start-here">Start Here</a>
-  <a href="#tradingview">Free Pine</a>
-  <a href="#trading-tools">Tools</a>
-  <a href="resources.html">Resources</a>
+<a href="#market-movers">Movers</a>
+<a href="#popular">Top Picks</a>
+
+<a href="#tradingview">Free Pine</a>
+<a href="#trading-tools">Tools</a>
+<a href="resources.html">Resources</a>
 </nav>
 </header>
-
 <section class="hero">
-  <div class="hero-dashboard">
-    <div>
-      <div class="kicker">Financial Tools • Trading • Business • Wealth</div>
-     
-      <p>Fast access to calculators, trading tools, and free finance reading for traders, investors, business owners, and builders.</p>
-      <div class="quick-actions">
-        <a class="btn" href="#tradingview">Download Free Pine Script</a>
-        <a class="btn secondary" href="#popular">See Top Picks</a>
-        <a class="btn secondary" href="resources.html">Open Resources</a>
-      </div>
-      <div class="hero-note">Educational tools only. Always verify current market data before making financial decisions.</div>
-    </div>
-
-    <aside class="market-snapshot" aria-label="Market snapshot">
-      <h3>Market Snapshot</h3>
-      <div class="market-row"><strong>S&amp;P 500</strong><span>+0.45%</span></div>
-      <div class="market-row"><strong>NASDAQ</strong><span>+0.62%</span></div>
-      <div class="market-row"><strong>Bitcoin</strong><span>+1.24%</span></div>
-    </aside>
-  </div>
-
-  <section id="market-movers" class="market-movers-section">
-    <div class="movers-wrap">
-      <div class="movers-title">Daily Market Movers</div>
-      <div class="ticker">
-        <div class="ticker-track">
-          <span class="up">NVDA +4.8%</span>
-          <span class="down">TSLA -3.6%</span>
-          <span class="up">AAPL +2.1%</span>
-          <span class="down">AMZN -2.4%</span>
-          <span class="up">META +3.2%</span>
-          <span class="up">MSFT +1.8%</span>
-          <span class="up">NVDA +4.8%</span>
-          <span class="down">TSLA -3.6%</span>
-          <span class="up">AAPL +2.1%</span>
-          <span class="down">AMZN -2.4%</span>
-          <span class="up">META +3.2%</span>
-          <span class="up">MSFT +1.8%</span>
-        </div>
-      </div>
-    </div>
-  </section>
+<div class="hero-dashboard">
+<div>
+<div class="kicker">Financial Tools • Trading • Business • Wealth</div><h1>Capital • Knowledge • Opportunity</h1>
+<p>Fast access to calculators, trading tools, and free finance reading for traders, investors, business owners, and builders.</p>
+<div class="quick-actions">
+<a class="btn" href="#tradingview">Download Free Pine Script</a>
+<a class="btn secondary" href="#popular">See Top Picks</a>
+<a class="btn secondary" href="resources.html">Open Resources</a>
+</div>
+<div class="hero-note">Educational tools only. Always verify current market data before making financial decisions.</div>
+</div>
+<aside aria-label="Market snapshot" class="market-snapshot">
+<h3>Market Snapshot</h3>
+<div class="market-row"><strong>S&amp;P 500</strong><span>+0.45%</span></div>
+<div class="market-row"><strong>NASDAQ</strong><span>+0.62%</span></div>
+<div class="market-row"><strong>Bitcoin</strong><span>+1.24%</span></div>
+</aside>
+</div>
+<section class="market-movers-section" id="market-movers">
+<div class="movers-wrap">
+<div class="movers-title">Daily Market Movers</div>
+<div class="ticker">
+<div class="ticker-track">
+<span class="up">NVDA +4.8%</span>
+<span class="down">TSLA -3.6%</span>
+<span class="up">AAPL +2.1%</span>
+<span class="down">AMZN -2.4%</span>
+<span class="up">META +3.2%</span>
+<span class="up">MSFT +1.8%</span>
+<span class="up">NVDA +4.8%</span>
+<span class="down">TSLA -3.6%</span>
+<span class="up">AAPL +2.1%</span>
+<span class="down">AMZN -2.4%</span>
+<span class="up">META +3.2%</span>
+<span class="up">MSFT +1.8%</span>
+</div>
+</div>
+</div>
 </section>
-
+</section>
 <main>
-  <div class="category-jump">
-    <a href="#popular">Top Picks</a>
-    <a href="#start-here">Start Here</a>
-    <a href="#tradingview">Pine</a>
-    <a href="#trading-tools">Trading Tools</a>
-    <a href="#real-estate-tools">Real Estate</a>
-    <a href="#business-tools">Business</a>
-    <a href="#wealth-tools">Wealth</a>
-    <a href="#resources">Resources</a>
-    <a href="#reading">Reading</a>
-  </div>
+<div class="category-jump">
+<a href="#popular">Top Picks</a>
 
-<section id="popular" class="conversion-section">
-  <div class="section-head">
-    <h2>Most Popular This Week</h2>
-    <p>Fast access to the highest-intent resources</p>
-  </div>
-  <div class="grid">
-    <div class="card trading top-pickk">
-      <div class="kicker">Free Download</div>
-      <h3>TradingView Pine Script Strategy Package</h3>
-      <p>Free Pine Script v6 package with strategy modes, alerts, ATR exits, market structure, liquidity concepts, FVGs, and dashboard.</p>
-      <span class="badge">★★★★★ Free Tool</span>
-      <span class="badge">Best For Traders</span>
-      <div class="buttons">
-        <a class="btn" href="capital-library-tradingview-strategy-package-github.pine" download>Download Free</a>
-      </div>
-    </div>
-
-    <div class="card trading top-pickk">
-      <div class="kicker">Stock Education</div>
-      <h3>CNC Academy Membership</h3>
-      <p>Monthly stock-market learning membership for traders and investors.</p>
-      <span class="badge">★★★★★ Beginner Friendly</span>
-      <span class="badge">Trading Education</span>
-      <div class="buttons">
-        <a class="btn" href="https://tallguytycoon.gumroad.com/l/Pxkij?a=812339299" target="_blank">Access Membership</a>
-      </div>
-    </div>
-
-    <div class="card business top-pickk">
-      <div class="kicker">Business & Taxes</div>
-      <h3>The Taxes, Accounting, Bookkeeping Bible</h3>
-      <p>Small-business guide covering taxes, bookkeeping, accounting, savings tips, and IRS penalty avoidance.</p>
-      <span class="badge">★★★★★ Business Owners</span>
-      <span class="badge">Best Value</span>
-      <div class="buttons">
-        <a class="btn" href="https://amzn.to/4ecDZu6" target="_blank">Access Now</a>
-      </div>
-    </div>
-
-    <div class="card realestate top-pickk">
-      <div class="kicker">Real Estate</div>
-      <h3>Real Estate Investment Starter Guide</h3>
-      <p>Learn rental property basics, cash flow, ROI, cap rate, expenses, and deal review.</p>
-      <span class="badge">★★★★★ New Investors</span>
-      <span class="badge">Rental Analysis</span>
-      <div class="buttons">
-        <a class="btn" href="https://danidoono.gumroad.com/l/rfhxr" target="_blank">Access Resource</a>
-      </div>
-    </div>
-  </div>
+<a href="#tradingview">Pine</a>
+<a href="#trading-tools">Trading Tools</a>
+<a href="#real-estate-tools">Real Estate</a>
+<a href="#business-tools">Business</a>
+<a href="#wealth-tools">Wealth</a>
+<a href="#hot-new">Offers</a>
+<a href="#reading">Reading</a>
+</div>
+<section class="conversion-section" id="popular">
+<div class="section-head">
+<h2>Most Popular This Week</h2>
+<p>Fast access to the highest-intent resources</p>
+</div>
+<div class="top-picks-list"><a class="top-pick-row" href="#tradingview"><span class="pick-title">Free Pine Script Strategy Package</span><span class="pick-desc">Download the TradingView tool</span><span class="pick-badge">Free Download</span></a><a class="top-pick-row" href="#hot-new"><span class="pick-title">CNC Academy Membership</span><span class="pick-desc">Stock market education</span><span class="pick-badge">Trading</span></a><a class="top-pick-row" href="#business-resources"><span class="pick-title">Bookkeeping Bible</span><span class="pick-desc">Taxes, accounting, and bookkeeping</span><span class="pick-badge">Business</span></a><a class="top-pick-row" href="#hot-new"><span class="pick-title">Real Estate Starter Guide</span><span class="pick-desc">Rental property basics and deal review</span><span class="pick-badge">Real Estate</span></a></div>
 </section>
-
-  <div class="card">
-    <div class="start-grid">
-      <button class="choice-btn" onclick="showPath('trading')">Trading</button>
-      <button class="choice-btn" onclick="showPath('business')">Business</button>
-      <button class="choice-btn" onclick="showPath('realestate')">Real Estate</button>
-      <button class="choice-btn" onclick="showPath('wealth')">Build Wealth</button>
-      <button class="choice-btn" onclick="showPath('taxes')">Taxes</button>
-      <button class="choice-btn" onclick="showPath('books')">Books</button>
-    </div>
-  </div>
-</section>
-
-<section class="conversion-section featured-banner">
-  <div class="kicker">Featured Resource</div>
-  <h2>Free TradingView Strategy Package</h2>
-  <p>Includes EMA Trend, Supertrend, VWAP Mean Reversion, Opening Range Breakout, Market Structure, alerts, ATR exits, and backtest tools.</p>
-  <div class="buttons">
-    <a class="btn" href="capital-library-tradingview-strategy-package-github.pine" download>Free Pine Script</a>
-    <a class="btn secondary" href="#pine-generator">Create Pine Script Request</a>
-  </div>
-</section>
-
-<section class="conversion-section email-capture">
-  <div class="kicker">Free Updates</div>
-  <h2>Get Weekly Market & Business Tools</h2>
-  <div class="email-row">
-    <input id="emailInput" type="email" placeholder="Enter your email" />
-    <button class="btn" onclick="fakeEmailSignup()">Get Access</button>
-  </div>
-</section>
-
-<details class="accordion" id="compare-resources">
-  <summary>Compare Popular Resources</summary>
-  <div class="accordion-body">
-    <div class="comparison-table">
-      <table>
-        <thead>
-          <tr><th>Resource</th><th>Best For</th><th>Skill Level</th><th>Action</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>TradingView Pine Script Package</td><td>Backtesting strategies</td><td>Beginner-Intermediate</td><td><a class="btn small" href="capital-library-tradingview-strategy-package-github.pine" download>Download</a></td></tr>
-          <tr><td>CNC Academy</td><td>Stock-market education</td><td>Beginner</td><td><a class="btn small" href="https://tallguytycoon.gumroad.com/l/Pxkij?a=812339299" target="_blank">Access</a></td></tr>
-          <tr><td>Wave Runner</td><td>Futures trading workflows</td><td>Intermediate</td><td><a class="btn small" href="https://simplemarketmetrics.gumroad.com/l/jeiyj?a=812339299" target="_blank">Access</a></td></tr>
-          <tr><td>Bookkeeping Bible</td><td>Small-business taxes</td><td>Beginner</td><td><a class="btn small" href="https://amzn.to/4ecDZu6" target="_blank">Access</a></td></tr>
-          <tr><td>Real Estate Starter Guide</td><td>Rental property analysis</td><td>Beginner</td><td><a class="btn small" href="https://danidoono.gumroad.com/l/rfhxr" target="_blank">Access</a></td></tr>
-        </tbody>
-      </table>
-    </div>
-
+<div class="card">
+<div class="start-grid">
+<button class="choice-btn" onclick="showPath('trading')">Trading</button>
+<button class="choice-btn" onclick="showPath('business')">Business</button>
+<button class="choice-btn" onclick="showPath('realestate')">Real Estate</button>
+<button class="choice-btn" onclick="showPath('wealth')">Build Wealth</button>
+<button class="choice-btn" onclick="showPath('taxes')">Taxes</button>
+<button class="choice-btn" onclick="showPath('books')">Books</button>
 </div>
 </div>
-</div></details>
-<details class="accordion" id="tool-menu"><summary>Tool Menu</summary><div class="accordion-body"><p class="section-intro">One-click access to all calculators and utilities</p>
 
-<div class="tool-nav">
-<a href="#position-size">Position Size</a>
-<a href="#risk-reward">Risk / Reward</a>
-<a href="#compound">Compound Interest</a>
-<a href="#journal">Trade Journal</a>
-<a href="#sessions">Market Clock</a>
-<a href="#pine-generator">Pine Generator</a>
-<a href="#strategy-compare">Strategy Compare</a>
-<a href="#rental">Rental Calculator</a>
-<a href="#brrrr">BRRRR Calculator</a>
-<a href="#startup">Startup Costs</a>
-<a href="#tax-tracker">Tax Tracker</a>
-<a href="#net-worth">Net Worth</a>
-<a href="#fire">FIRE Calculator</a>
-<a href="#vault-search">Vault Search</a>
-<a href="#opportunity">Daily Scanner</a>
-</div>
-</div></details>
+
+
+
+
 <details class="accordion" id="tradingview" open=""><summary>Free TradingView Strategy Package</summary><div class="accordion-body"><p class="section-intro">Download the Pine Script v6 tool</p>
-
 <div class="grid">
 <div class="card trading">
 <div class="kicker">Pine Script v6</div>
@@ -1042,7 +1004,6 @@ footer{
 </div>
 </div></details>
 <details class="accordion" id="trading-tools"><summary>Trading &amp; Investing Tools</summary><div class="accordion-body"><p class="section-intro">Risk, entries, journals, sessions, and strategy planning</p>
-
 <div class="tool-panel" id="position-size">
 <h3>1. Position Size Calculator</h3>
 <p>Calculate shares/contracts from account size, risk percentage, entry, and stop loss.</p>
@@ -1132,7 +1093,6 @@ footer{
 </div>
 </div></details>
 <details class="accordion" id="real-estate-tools"><summary>Real Estate Tools</summary><div class="accordion-body"><p class="section-intro">Analyze rental cash flow, ROI, and BRRRR deals</p>
-
 <div class="tool-panel" id="rental">
 <h3>8. Rental Property Calculator</h3>
 <div class="form-grid">
@@ -1157,7 +1117,6 @@ footer{
 </div>
 </div></details>
 <details class="accordion" id="business-tools"><summary>Business Tools</summary><div class="accordion-body"><p class="section-intro">Startup planning and tax deduction tracking</p>
-
 <div class="tool-panel" id="startup">
 <h3>10. Business Startup Cost Calculator</h3>
 <div class="form-grid">
@@ -1188,7 +1147,6 @@ footer{
 </div>
 </div></details>
 <details class="accordion" id="wealth-tools"><summary>Wealth Tools</summary><div class="accordion-body"><p class="section-intro">Net worth, FIRE planning, and long-term capital growth</p>
-
 <div class="tool-panel" id="net-worth">
 <h3>12. Net Worth Calculator</h3>
 <div class="form-grid">
@@ -1215,7 +1173,6 @@ footer{
 </div>
 </div></details>
 <details class="accordion" id="resource-tools"><summary>Resource Tools</summary><div class="accordion-body"><p class="section-intro">Search resources and find a daily opportunity idea</p>
-
 <div class="tool-panel" id="vault-search">
 <h3>14. Free Resource Vault Search</h3>
 <label>Search<input id="vsSearch" oninput="vaultSearch()" placeholder="Search books, trading, real estate, business..."/></label>
@@ -1227,10 +1184,8 @@ footer{
 <button class="btn small" onclick="dailyOpportunity()">Scan Opportunity</button>
 <div class="result" id="opResult">Click the button for an idea.</div>
 </div>
-
 </div></details>
-<details class="accordion" id="hot-new"><summary>Featured Resources</summary><div class="accordion-body"><p class="section-intro">Featured books, tools, memberships and resources</p>
-
+<details class="accordion" id="hot-new"><summary>Trading, Real Estate &amp; Wealth Offers</summary><div class="accordion-body"><p class="section-intro">Featured books, tools, memberships and resources</p>
 <div class="grid">
 <div class="card realestate">
 <div class="kicker">Real Estate</div>
@@ -1322,8 +1277,7 @@ footer{
 </div>
 </div>
 </div></details>
-<details class="accordion" id="business-resources"><summary>Business &amp; Operations Resources</summary><div class="accordion-body"><p class="section-intro">Taxes, bookkeeping, accounting, software and small-business tools</p>
-
+<details class="accordion" id="business-resources"><summary>Business &amp; Tax Resources</summary><div class="accordion-body"><p class="section-intro">Taxes, bookkeeping, accounting, software and small-business tools</p>
 <div class="grid">
 <div class="card business">
 <div class="preview"><div class="small">Tax • Accounting</div><div class="big">Small Business Owner Guide</div></div>
@@ -1393,8 +1347,7 @@ footer{
 </div>
 </div>
 </div></details>
-<details class="accordion" id="reading"><summary>Recommended Finance Reading</summary><div class="accordion-body"><p class="section-intro">Curated books for wealth, business and economics</p>
-
+<details class="accordion" id="reading"><summary>Free Finance Reading</summary><div class="accordion-body"><p class="section-intro">Curated books for wealth, business and economics</p>
 <div class="grid">
 <div class="card wealth">
 <div class="preview"><div class="small">Wealth</div><div class="big">The Richest Man in Babylon</div></div>
@@ -1431,18 +1384,10 @@ footer{
 <a class="btn light" href="https://www.gutenberg.org/ebooks/368.epub.images" target="_blank">Download EPUB</a>
 </div>
 </div>
-<div class="card realestate">
-<div class="preview"><div class="small">Real Estate</div><div class="big">Investment Starter Guide</div></div>
-<h3>Real Estate Investment Starter Guide</h3>
-<p>Your guide for cash flow, ROI, cap rate, expenses and rental property deal review.</p>
-<div class="buttons">
-<a class="btn" href="https://danidoono.gumroad.com/l/rfhxr" target="_blank">Access Resource</a>
-</div>
-</div>
+
 </div>
 </div></details>
 <details class="accordion" id="self-development"><summary>Self Development</summary><div class="accordion-body">
-
 <div class="grid">
 <div class="card relationship">
 <div class="kicker">Self Development</div>
