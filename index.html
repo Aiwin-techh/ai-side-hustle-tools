@@ -75,7 +75,7 @@ nav a:hover{
     linear-gradient(135deg,rgba(31,95,74,.96),rgba(18,59,49,.98)),
     radial-gradient(circle at top right,#91c6aa,transparent 34%);
   color:white;
-  padding:52px 6% 34px;
+  padding:28px 6% 24px;
 }
 
 .kicker{
@@ -87,10 +87,10 @@ nav a:hover{
 }
 
 .hero h1{
-  font-size:clamp(1.85rem,4vw,3.15rem);
+  font-size:clamp(1.55rem,2.8vw,2.65rem);
   letter-spacing:.03em;
   line-height:1.08;
-  margin:14px 0 12px;
+  margin:10px 0 10px;
   text-transform:uppercase;
   font-weight:900;
 }
@@ -99,12 +99,12 @@ nav a:hover{
   max-width:760px;
   color:#f4ead9;
   line-height:1.7;
-  font-size:1rem;
+  font-size:.96rem;
   margin:0;
 }
 
 .quick-actions{
-  margin-top:24px;
+  margin-top:16px;
   display:flex;
   gap:10px;
   flex-wrap:wrap;
@@ -230,7 +230,7 @@ main{
 .ticker-track{
   display:inline-block;
   padding:15px 0;
-  animation:tickerMove 26s linear infinite;
+  animation:tickerMove 16s linear infinite;
 }
 
 .ticker span{
@@ -587,12 +587,12 @@ footer{
   margin:5px 5px 5px 0;
 }
 
-.top-pick{
+.top-pickk{
   position:relative;
   overflow:hidden;
 }
 
-.top-pick::before{
+.top-pickk::before{
   content:"TOP PICK";
   position:absolute;
   top:14px;
@@ -709,51 +709,219 @@ footer{
   }
 }
 
+
+/* Performance + affiliate conversion refresh */
+.hero-dashboard{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 310px;
+  gap:24px;
+  align-items:start;
+}
+
+.market-snapshot{
+  background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:22px;
+  padding:16px;
+  box-shadow:0 18px 36px rgba(0,0,0,.12);
+}
+
+.market-snapshot h3{
+  margin:0 0 10px;
+  font-size:.78rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:#f0d99b;
+}
+
+.market-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:14px;
+  padding:9px 0;
+  border-top:1px solid rgba(255,255,255,.14);
+  font-weight:900;
+}
+
+.market-row:first-of-type{
+  border-top:0;
+}
+
+.market-row span:last-child{
+  color:#8ce99a;
+}
+
+.hero p{
+  max-width:700px;
+}
+
+.quick-actions .btn{
+  box-shadow:0 10px 24px rgba(0,0,0,.12);
+}
+
+.hero-note{
+  margin-top:12px;
+  color:#f4ead9;
+  font-size:.86rem;
+  font-weight:700;
+  opacity:.92;
+}
+
+.movers-wrap{
+  margin-top:0;
+}
+
+.ticker-track{
+  will-change:transform;
+}
+
+.category-jump{
+  position:sticky;
+  top:68px;
+  z-index:15;
+  background:rgba(247,243,234,.92);
+  backdrop-filter:blur(10px);
+  padding:10px 0;
+}
+
+.category-jump a{
+  transition:transform .15s ease, background .15s ease;
+}
+
+.category-jump a:hover{
+  transform:translateY(-1px);
+  background:var(--gold);
+  color:#13271f;
+}
+
+.top-pickk{
+  position:relative;
+}
+
+.top-pickk::after{
+  content:"Top Pick";
+  position:absolute;
+  top:14px;
+  right:14px;
+  background:var(--gold);
+  color:#13271f;
+  border-radius:999px;
+  padding:6px 10px;
+  font-size:.72rem;
+  font-weight:900;
+}
+
+@media(max-width:900px){
+  .hero-dashboard{
+    grid-template-columns:1fr;
+  }
+
+  .market-snapshot{
+    max-width:100%;
+  }
+
+  .category-jump{
+    top:0;
+    overflow:auto;
+    white-space:nowrap;
+  }
+}
+
+@media(max-width:520px){
+  .hero{
+    padding:22px 5% 18px;
+  }
+
+  .hero h1{
+    font-size:1.55rem;
+  }
+
+  .hero p{
+    font-size:.9rem;
+  }
+
+  .market-snapshot{
+    padding:14px;
+  }
+
+  .ticker-track{
+    animation-duration:13s;
+  }
+}
+
 </style>
 </head>
 <body>
 <header>
 <div class="logo">Capital Library</div>
 <nav>
-    <a href="#market-movers">Movers</a>
-    <a href="#start-here">Start Here</a>
-    <a href="#popular">Top Picks</a>
-    <a href="#tradingview">Free Pine</a>
-    <a href="#trading-tools">Tools</a>
-    <a href="resources.html">Resources Page</a>
-  </nav>
+  <a href="#market-movers">Movers</a>
+  <a href="#popular">Top Picks</a>
+  <a href="#start-here">Start Here</a>
+  <a href="#tradingview">Free Pine</a>
+  <a href="#trading-tools">Tools</a>
+  <a href="resources.html">Resources</a>
+</nav>
 </header>
-<section class="hero">
-<div class="kicker">Financial Tools • Trading • Business • Wealth</div>
-<h1>Capital - Knowledge - Opportunity</h1>
-<p>A simplified toolkit for traders, investors, business owners, and builders. Use the buttons below to jump straight into calculators, downloads, affiliate resources, and free reading.</p>
-<div class="quick-actions">
-<a class="btn" href="#tool-menu">Open Tool Menu</a>
-<a class="btn secondary" href="#tradingview">Download Pine Script</a>
-<a class="btn secondary" href="#resources">View Resources</a>
-</div>
-    </div>
-  </div>
-</details>
-<section id="market-movers" class="market-movers-section">
-  <div class="movers-wrap">
-    <div class="movers-title">Daily Market Movers</div>
-    <div class="ticker">
-      <div class="ticker-track">
-        <span class="up">NVDA +4.8%</span>
-        <span class="down">TSLA -3.6%</span>
-        <span class="up">AAPL +2.1%</span>
-        <span class="down">AMZN -2.4%</span>
-        <span class="up">META +3.2%</span>
-        <span class="up">MSFT +1.8%</span>
-      </div>
-</section>
-</div>
-</section>
-<main><div class="category-jump"><a href="#tool-menu">Menu</a><a href="#tradingview">Pine</a><a href="#trading-tools">Trading</a><a href="#real-estate-tools">Real Estate</a><a href="#business-tools">Business</a><a href="#wealth-tools">Wealth</a><a href="#resource-tools">Resource Tools</a><a href="#resources">Resources</a><a href="#reading">Reading</a><a href="#self-development">Self Dev</a></div>
 
+<section class="hero">
+  <div class="hero-dashboard">
+    <div>
+      <div class="kicker">Financial Tools • Trading • Business • Wealth</div>
+      <h1>Capital • Knowledge • Opportunity</h1>
+      <p>Fast access to calculators, trading tools, affiliate resources, and free finance reading for traders, investors, business owners, and builders.</p>
+      <div class="quick-actions">
+        <a class="btn" href="#tradingview">Download Free Pine Script</a>
+        <a class="btn secondary" href="#popular">See Top Picks</a>
+        <a class="btn secondary" href="resources.html">Open Resources</a>
+      </div>
+      <div class="hero-note">Educational tools only. Always verify current market data before making financial decisions.</div>
+    </div>
+
+    <aside class="market-snapshot" aria-label="Market snapshot">
+      <h3>Market Snapshot</h3>
+      <div class="market-row"><strong>S&amp;P 500</strong><span>+0.45%</span></div>
+      <div class="market-row"><strong>NASDAQ</strong><span>+0.62%</span></div>
+      <div class="market-row"><strong>Bitcoin</strong><span>+1.24%</span></div>
+    </aside>
   </div>
+
+  <section id="market-movers" class="market-movers-section">
+    <div class="movers-wrap">
+      <div class="movers-title">Daily Market Movers</div>
+      <div class="ticker">
+        <div class="ticker-track">
+          <span class="up">NVDA +4.8%</span>
+          <span class="down">TSLA -3.6%</span>
+          <span class="up">AAPL +2.1%</span>
+          <span class="down">AMZN -2.4%</span>
+          <span class="up">META +3.2%</span>
+          <span class="up">MSFT +1.8%</span>
+          <span class="up">NVDA +4.8%</span>
+          <span class="down">TSLA -3.6%</span>
+          <span class="up">AAPL +2.1%</span>
+          <span class="down">AMZN -2.4%</span>
+          <span class="up">META +3.2%</span>
+          <span class="up">MSFT +1.8%</span>
+        </div>
+      </div>
+    </div>
+  </section>
 </section>
+
+<main>
+  <div class="category-jump">
+    <a href="#popular">Top Picks</a>
+    <a href="#start-here">Start Here</a>
+    <a href="#tradingview">Pine</a>
+    <a href="#trading-tools">Trading Tools</a>
+    <a href="#real-estate-tools">Real Estate</a>
+    <a href="#business-tools">Business</a>
+    <a href="#wealth-tools">Wealth</a>
+    <a href="#resources">Resources</a>
+    <a href="#reading">Reading</a>
+  </div>
 
 <section id="popular" class="conversion-section">
   <div class="section-head">
@@ -761,7 +929,7 @@ footer{
     <p>Fast access to the highest-intent resources</p>
   </div>
   <div class="grid">
-    <div class="card trading top-pick">
+    <div class="card trading top-pickk">
       <div class="kicker">Free Download</div>
       <h3>TradingView Pine Script Strategy Package</h3>
       <p>Free Pine Script v6 package with strategy modes, alerts, ATR exits, market structure, liquidity concepts, FVGs, and dashboard.</p>
@@ -772,7 +940,7 @@ footer{
       </div>
     </div>
 
-    <div class="card trading top-pick">
+    <div class="card trading top-pickk">
       <div class="kicker">Stock Education</div>
       <h3>CNC Academy Membership</h3>
       <p>Monthly stock-market learning membership for traders and investors.</p>
@@ -783,7 +951,7 @@ footer{
       </div>
     </div>
 
-    <div class="card business top-pick">
+    <div class="card business top-pickk">
       <div class="kicker">Business & Taxes</div>
       <h3>The Taxes, Accounting, Bookkeeping Bible</h3>
       <p>Small-business guide covering taxes, bookkeeping, accounting, savings tips, and IRS penalty avoidance.</p>
@@ -794,7 +962,7 @@ footer{
       </div>
     </div>
 
-    <div class="card realestate top-pick">
+    <div class="card realestate top-pickk">
       <div class="kicker">Real Estate</div>
       <h3>Real Estate Investment Starter Guide</h3>
       <p>Learn rental property basics, cash flow, ROI, cap rate, expenses, and deal review.</p>
@@ -829,7 +997,7 @@ footer{
   <h2>Free TradingView Strategy Package</h2>
   <p>Includes EMA Trend, Supertrend, VWAP Mean Reversion, Opening Range Breakout, Market Structure, alerts, ATR exits, and backtest tools.</p>
   <div class="buttons">
-    <a class="btn" href="capital-library-tradingview-strategy-package-github.pine" download>Download Pine Script</a>
+    <a class="btn" href="capital-library-tradingview-strategy-package-github.pine" download>Free Pine Script</a>
     <a class="btn secondary" href="#pine-generator">Create Pine Script Request</a>
   </div>
 </section>
@@ -892,7 +1060,7 @@ footer{
 <h3>Capital Library Strategy Package</h3>
 <p>Includes strategy modes, alerts, ATR exits, market-structure tools, liquidity concepts, FVGs, and a backtest dashboard.</p>
 <div class="buttons">
-<a class="btn" download="" href="capital-library-tradingview-strategy-package-github.pine">Download Pine Script</a>
+<a class="btn" download="" href="capital-library-tradingview-strategy-package-github.pine">Free Pine Script</a>
 </div>
 </div>
 </div>
