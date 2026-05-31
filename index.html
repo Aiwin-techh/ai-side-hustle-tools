@@ -1,484 +1,514 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Luxury Free Ebook & Audiobook Library</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Booked & Bossed Library</title>
 
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap');
 
-    :root {
-      --tan: #c8ad7f;
-      --tan-light: #efe4d0;
-      --cream: #fbf7ef;
-      --dark: #1f1b16;
-      --brown: #5c4631;
-      --gold: #b08a4f;
-      --white: #ffffff;
-    }
+:root{
+  --cream:#fff8ed;
+  --tan:#d7bc91;
+  --deep:#21170f;
+  --brown:#5b4029;
+  --gold:#b58a4a;
+  --pink:#ff6fb1;
+  --lime:#c6ff4a;
+  --blue:#6ee7ff;
+  --white:#fff;
+}
 
-    * {
-      box-sizing: border-box;
-    }
+*{box-sizing:border-box}
 
-    body {
-      margin: 0;
-      font-family: "Inter", sans-serif;
-      background: var(--cream);
-      color: var(--dark);
-    }
+body{
+  margin:0;
+  font-family:Inter,Arial,sans-serif;
+  background:var(--cream);
+  color:var(--deep);
+}
 
-    header {
-      background:
-        linear-gradient(rgba(31, 27, 22, 0.7), rgba(31, 27, 22, 0.7)),
-        linear-gradient(135deg, #d8c3a5, #8d7658);
-      color: white;
-      padding: 70px 24px;
-      text-align: center;
-    }
+.nav{
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:rgba(255,248,237,.9);
+  backdrop-filter:blur(14px);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:16px 6%;
+  border-bottom:1px solid #ead7b8;
+}
 
-    header h1 {
-      font-size: clamp(2.2rem, 6vw, 4.7rem);
-      margin: 0;
-      letter-spacing: -2px;
-    }
+.logo{
+  font-weight:900;
+  font-size:1.25rem;
+  letter-spacing:-1px;
+}
 
-    header p {
-      max-width: 720px;
-      margin: 18px auto 0;
-      font-size: 1.15rem;
-      color: #f4eadb;
-    }
+.logo span{color:var(--gold)}
 
-    main {
-      max-width: 1200px;
-      margin: auto;
-      padding: 32px 20px 60px;
-    }
+.nav a{
+  color:var(--brown);
+  text-decoration:none;
+  font-weight:800;
+  margin-left:18px;
+}
 
-    .search-panel {
-      background: white;
-      padding: 24px;
-      margin-top: -45px;
-      border-radius: 24px;
-      box-shadow: 0 20px 50px rgba(60, 45, 28, 0.18);
-      display: grid;
-      gap: 18px;
-    }
+.hero{
+  margin:28px auto;
+  width:92%;
+  min-height:430px;
+  border-radius:36px;
+  background:
+    radial-gradient(circle at top left,var(--pink),transparent 30%),
+    radial-gradient(circle at bottom right,var(--blue),transparent 30%),
+    linear-gradient(135deg,#d9bd91,#7b5a37);
+  color:white;
+  padding:54px;
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 30px 70px rgba(91,64,41,.28);
+}
 
-    .search-row {
-      display: flex;
-      gap: 12px;
-    }
+.hero h1{
+  max-width:780px;
+  font-size:clamp(3rem,9vw,7rem);
+  line-height:.88;
+  letter-spacing:-6px;
+  margin:0;
+}
 
-    input {
-      flex: 1;
-      padding: 16px;
-      border: 1px solid #ddd0bd;
-      border-radius: 14px;
-      font-size: 16px;
-      outline: none;
-    }
+.hero p{
+  max-width:600px;
+  font-size:1.15rem;
+  margin:24px 0;
+}
 
-    button {
-      padding: 16px 24px;
-      border: none;
-      border-radius: 14px;
-      background: var(--brown);
-      color: white;
-      font-weight: 700;
-      cursor: pointer;
-    }
+.badge{
+  display:inline-block;
+  background:var(--lime);
+  color:#111;
+  padding:10px 16px;
+  border-radius:999px;
+  font-weight:900;
+  transform:rotate(-3deg);
+}
 
-    button:hover {
-      background: #3f2f20;
-    }
+.sticker{
+  position:absolute;
+  right:50px;
+  bottom:45px;
+  background:white;
+  color:var(--deep);
+  padding:22px;
+  border-radius:28px;
+  font-weight:900;
+  max-width:230px;
+  transform:rotate(5deg);
+  box-shadow:0 20px 40px rgba(0,0,0,.2);
+}
 
-    .categories {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
+main{
+  width:92%;
+  margin:auto;
+  padding-bottom:60px;
+}
 
-    .category {
-      background: var(--tan-light);
-      color: var(--brown);
-      border: 1px solid #dfcba9;
-      padding: 10px 14px;
-      border-radius: 999px;
-      cursor: pointer;
-      font-size: 14px;
-      font-weight: 700;
-    }
+.search-card{
+  background:white;
+  border-radius:28px;
+  padding:22px;
+  display:grid;
+  gap:16px;
+  box-shadow:0 18px 45px rgba(91,64,41,.15);
+  border:1px solid #ead7b8;
+}
 
-    .category:hover {
-      background: var(--tan);
-      color: white;
-    }
+.search-row{
+  display:flex;
+  gap:12px;
+}
 
-    .section-title {
-      margin-top: 45px;
-      margin-bottom: 15px;
-      display: flex;
-      justify-content: space-between;
-      align-items: end;
-      gap: 12px;
-    }
+input{
+  flex:1;
+  padding:17px;
+  border-radius:18px;
+  border:1px solid #dfc7a5;
+  font-size:16px;
+}
 
-    .section-title h2 {
-      margin: 0;
-      font-size: 2rem;
-      letter-spacing: -1px;
-    }
+button{
+  border:0;
+  border-radius:18px;
+  padding:17px 24px;
+  background:var(--deep);
+  color:white;
+  font-weight:900;
+  cursor:pointer;
+}
 
-    .section-title span {
-      color: #7a6650;
-      font-size: 14px;
-    }
+.chips{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 22px;
-    }
+.chip{
+  background:#f1dfc2;
+  color:var(--brown);
+  padding:11px 15px;
+  border-radius:999px;
+  font-weight:900;
+  cursor:pointer;
+}
 
-    .card {
-      background: white;
-      border-radius: 22px;
-      overflow: hidden;
-      box-shadow: 0 14px 35px rgba(65, 48, 31, 0.12);
-      border: 1px solid #eadcc8;
-      transition: 0.25s ease;
-    }
+.chip:hover{
+  background:var(--pink);
+  color:white;
+}
 
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 20px 45px rgba(65, 48, 31, 0.18);
-    }
+.section-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  margin:44px 0 18px;
+}
 
-    .cover {
-      height: 260px;
-      background: linear-gradient(135deg, #e8d8bd, #9c7b51);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+.section-head h2{
+  margin:0;
+  font-size:2.4rem;
+  letter-spacing:-2px;
+}
 
-    .cover img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+.section-head p{
+  margin:0;
+  color:#775f47;
+  font-weight:700;
+}
 
-    .cover-placeholder {
-      width: 78%;
-      height: 80%;
-      border: 2px solid rgba(255,255,255,.5);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 25px;
-      text-align: center;
-      color: white;
-      font-weight: 800;
-      font-size: 1.2rem;
-    }
+.shelf{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:22px;
+}
 
-    .card-body {
-      padding: 20px;
-    }
+.book{
+  background:white;
+  border:1px solid #ead7b8;
+  border-radius:28px;
+  overflow:hidden;
+  box-shadow:0 16px 40px rgba(91,64,41,.13);
+  transition:.25s;
+}
 
-    .tag {
-      display: inline-block;
-      background: #f3eadc;
-      color: var(--brown);
-      padding: 6px 10px;
-      border-radius: 999px;
-      font-size: 12px;
-      font-weight: 800;
-      margin-bottom: 10px;
-    }
+.book:hover{
+  transform:translateY(-7px) rotate(-1deg);
+}
 
-    .card h3 {
-      margin: 0 0 8px;
-      font-size: 1.1rem;
-      line-height: 1.35;
-    }
+.cover{
+  height:280px;
+  background:
+    radial-gradient(circle at top right,var(--lime),transparent 35%),
+    linear-gradient(135deg,#e4c799,#6f4e2f);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
 
-    .author {
-      color: #75614c;
-      font-size: 14px;
-      margin-bottom: 12px;
-    }
+.cover img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
 
-    .meta {
-      font-size: 13px;
-      color: #6f5c47;
-      background: #faf4eb;
-      padding: 10px;
-      border-radius: 12px;
-      margin-bottom: 14px;
-    }
+.fake-cover{
+  width:78%;
+  height:82%;
+  border:2px solid rgba(255,255,255,.6);
+  border-radius:18px;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:18px;
+  font-weight:900;
+  font-size:1.1rem;
+}
 
-    .review {
-      font-size: 13px;
-      color: #4d4034;
-      border-left: 3px solid var(--gold);
-      padding-left: 10px;
-      margin-bottom: 14px;
-      line-height: 1.5;
-    }
+.info{
+  padding:20px;
+}
 
-    .links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
+.tag{
+  display:inline-block;
+  background:#fff0f7;
+  color:#b83275;
+  padding:7px 11px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:900;
+  margin-bottom:10px;
+}
 
-    .links a {
-      background: var(--brown);
-      color: white;
-      padding: 10px 12px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-size: 13px;
-      font-weight: 700;
-    }
+.info h3{
+  margin:0 0 8px;
+  font-size:1.08rem;
+  line-height:1.3;
+}
 
-    .links a.secondary {
-      background: var(--gold);
-    }
+.author{
+  color:#755e46;
+  font-size:14px;
+  font-weight:700;
+  min-height:36px;
+}
 
-    .loading {
-      padding: 20px;
-      background: white;
-      border-radius: 18px;
-      color: var(--brown);
-    }
+.proof{
+  margin:14px 0;
+  background:#faf0df;
+  padding:12px;
+  border-radius:16px;
+  font-size:13px;
+  color:#604934;
+}
 
-    footer {
-      text-align: center;
-      color: #78644f;
-      padding: 35px;
-    }
+.actions{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
 
-    @media (max-width: 650px) {
-      .search-row {
-        flex-direction: column;
-      }
+.actions a{
+  text-decoration:none;
+  background:var(--deep);
+  color:white;
+  padding:10px 12px;
+  border-radius:13px;
+  font-size:13px;
+  font-weight:900;
+}
 
-      button {
-        width: 100%;
-      }
-    }
-  </style>
+.actions a.alt{
+  background:var(--gold);
+}
+
+.loading{
+  background:white;
+  border-radius:22px;
+  padding:25px;
+  color:var(--brown);
+  font-weight:800;
+}
+
+footer{
+  text-align:center;
+  padding:35px;
+  color:#765f47;
+  font-weight:700;
+}
+
+@media(max-width:700px){
+  .nav a{display:none}
+  .hero{padding:34px;min-height:520px}
+  .hero h1{letter-spacing:-3px}
+  .sticker{right:25px;bottom:25px}
+  .search-row{flex-direction:column}
+}
+</style>
 </head>
 
 <body>
-  <header>
-    <h1>Executive Free Library</h1>
-    <p>Luxury-styled access to free public-domain ebooks and audiobooks for business, real estate, self-growth, finance, leadership, and strategy.</p>
-  </header>
 
-  <main>
-    <section class="search-panel">
-      <div class="search-row">
-        <input id="searchInput" value="business" placeholder="Search business, investing, real estate, self help..." />
-        <button onclick="searchBooks()">Search</button>
-      </div>
+<nav class="nav">
+  <div class="logo">Booked<span>&</span>Bossed</div>
+  <div>
+    <a href="#hot">Hot</a>
+    <a href="#ebooks">Ebooks</a>
+    <a href="#audio">Audio</a>
+  </div>
+</nav>
 
-      <div class="categories">
-        <span class="category" onclick="setCategory('business')">Business</span>
-        <span class="category" onclick="setCategory('real estate')">Real Estate</span>
-        <span class="category" onclick="setCategory('self help')">Self Help</span>
-        <span class="category" onclick="setCategory('success')">Success</span>
-        <span class="category" onclick="setCategory('finance')">Finance</span>
-        <span class="category" onclick="setCategory('leadership')">Leadership</span>
-        <span class="category" onclick="setCategory('sales')">Sales</span>
-        <span class="category" onclick="setCategory('marketing')">Marketing</span>
-      </div>
-    </section>
+<section class="hero">
+  <span class="badge">FREE PUBLIC DOMAIN DROPS</span>
+  <h1>Read rich. Think bigger.</h1>
+  <p>A Gen Z luxury learning shop for business, self-help, wealth, leadership, classics, and free audiobooks.</p>
+  <div class="sticker">No subscriptions. No gatekeeping. Just free knowledge.</div>
+</section>
 
-    <div class="section-title">
+<main>
+  <section class="search-card">
+    <div class="search-row">
+      <input id="searchInput" value="business" placeholder="Search business, wealth, mindset, real estate..." />
+      <button onclick="searchBooks()">Find Books</button>
+    </div>
+
+    <div class="chips">
+      <span class="chip" onclick="setCategory('business')">Business</span>
+      <span class="chip" onclick="setCategory('finance')">Finance</span>
+      <span class="chip" onclick="setCategory('success')">Success</span>
+      <span class="chip" onclick="setCategory('self help')">Self Help</span>
+      <span class="chip" onclick="setCategory('leadership')">Leadership</span>
+      <span class="chip" onclick="setCategory('real estate')">Real Estate</span>
+      <span class="chip" onclick="setCategory('marketing')">Marketing</span>
+      <span class="chip" onclick="setCategory('sales')">Sales</span>
+    </div>
+  </section>
+
+  <section id="hot">
+    <div class="section-head">
       <h2>Hot Items</h2>
-      <span>Ranked by public download popularity when available</span>
+      <p>Popular free reads</p>
     </div>
-    <section id="hotItems" class="grid"></section>
+    <div id="hotItems" class="shelf"></div>
+  </section>
 
-    <div class="section-title">
-      <h2>Ebooks</h2>
-      <span>Free public-domain books</span>
+  <section id="ebooks">
+    <div class="section-head">
+      <h2>Book Shelf</h2>
+      <p>Preview or download EPUB</p>
     </div>
-    <section id="ebooks" class="grid"></section>
+    <div id="ebookList" class="shelf"></div>
+  </section>
 
-    <div class="section-title">
-      <h2>Audiobooks</h2>
-      <span>Free public-domain audio from LibriVox</span>
+  <section id="audio">
+    <div class="section-head">
+      <h2>Audio Lounge</h2>
+      <p>Free LibriVox audiobooks</p>
     </div>
-    <section id="audiobooks" class="grid"></section>
-  </main>
+    <div id="audioList" class="shelf"></div>
+  </section>
+</main>
 
-  <footer>
-    Built with free public-domain content sources. No copyrighted books are hosted.
-  </footer>
+<footer>
+  Built with Gutendex and LibriVox public-domain content.
+</footer>
 
-  <script>
-    function setCategory(category) {
-      document.getElementById("searchInput").value = category;
-      searchBooks();
-    }
+<script>
+function setCategory(cat){
+  document.getElementById("searchInput").value = cat;
+  searchBooks();
+}
 
-    function safeText(text) {
-      return String(text || "")
-        .replaceAll("&", "&amp;")
-        .replaceAll("<", "&lt;")
-        .replaceAll(">", "&gt;")
-        .replaceAll('"', "&quot;");
-    }
+function clean(text){
+  return String(text || "")
+    .replaceAll("&","&amp;")
+    .replaceAll("<","&lt;")
+    .replaceAll(">","&gt;")
+    .replaceAll('"',"&quot;");
+}
 
-    function getAuthor(book) {
-      if (!book.authors || book.authors.length === 0) return "Unknown author";
-      return book.authors.map(a => a.name).join(", ");
-    }
+function authorName(book){
+  if(!book.authors || book.authors.length === 0) return "Unknown author";
+  return book.authors.map(a => a.name).join(", ");
+}
 
-    function getCategory(book) {
-      const subjects = (book.subjects || []).join(" ").toLowerCase();
+function categoryFor(book){
+  const text = ((book.subjects || []).join(" ") + " " + book.title).toLowerCase();
 
-      if (subjects.includes("business") || subjects.includes("commerce")) return "Business";
-      if (subjects.includes("finance") || subjects.includes("money")) return "Finance";
-      if (subjects.includes("success") || subjects.includes("self")) return "Self Help";
-      if (subjects.includes("leadership") || subjects.includes("management")) return "Leadership";
-      if (subjects.includes("real estate") || subjects.includes("property")) return "Real Estate";
+  if(text.includes("business") || text.includes("commerce")) return "Business";
+  if(text.includes("finance") || text.includes("money") || text.includes("wealth")) return "Finance";
+  if(text.includes("success") || text.includes("self")) return "Self Help";
+  if(text.includes("leadership") || text.includes("management")) return "Leadership";
+  if(text.includes("real estate") || text.includes("property")) return "Real Estate";
+  if(text.includes("sales")) return "Sales";
 
-      return "Classic";
-    }
+  return "Classic";
+}
 
-    function bookCard(book, hot = false) {
-      const title = safeText(book.title);
-      const author = safeText(getAuthor(book));
-      const category = getCategory(book);
-      const downloads = book.download_count || 0;
-      const cover = book.formats["image/jpeg"];
-      const readLink = book.formats["text/html"];
-      const epubLink = book.formats["application/epub+zip"];
+function bookCard(book, hot=false){
+  const title = clean(book.title);
+  const author = clean(authorName(book));
+  const cover = book.formats["image/jpeg"];
+  const read = book.formats["text/html"];
+  const epub = book.formats["application/epub+zip"];
+  const downloads = book.download_count || 0;
+  const cat = categoryFor(book);
 
-      return `
-        <article class="card">
-          <div class="cover">
-            ${
-              cover
-                ? `<img src="${cover}" alt="${title} cover">`
-                : `<div class="cover-placeholder">${title}</div>`
-            }
-          </div>
+  return `
+    <article class="book">
+      <div class="cover">
+        ${cover ? `<img src="${cover}" alt="${title}">` : `<div class="fake-cover">${title}</div>`}
+      </div>
+      <div class="info">
+        <span class="tag">${hot ? "🔥 Hot Drop" : cat}</span>
+        <h3>${title}</h3>
+        <div class="author">${author}</div>
+        <div class="proof">
+          ${downloads.toLocaleString()} public downloads. Source does not provide verified reviews, so this site shows popularity instead.
+        </div>
+        <div class="actions">
+          ${read ? `<a href="${read}" target="_blank">Preview</a>` : ""}
+          ${epub ? `<a class="alt" href="${epub}" target="_blank">Download</a>` : ""}
+        </div>
+      </div>
+    </article>
+  `;
+}
 
-          <div class="card-body">
-            <span class="tag">${category}</span>
-            <h3>${title}</h3>
-            <div class="author">By ${author}</div>
+function audioCard(book){
+  let author = "Unknown author";
 
-            <div class="meta">
-              ${hot ? "🔥 Hot Item<br>" : ""}
-              Downloads: ${downloads.toLocaleString()}
-            </div>
+  if(book.authors && book.authors.length){
+    author = book.authors.map(a => `${a.first_name || ""} ${a.last_name || ""}`.trim()).join(", ");
+  }
 
-            <div class="review">
-              Reader insight: This title is popular in the free public-domain collection. Verified written reviews are not provided by the source API.
-            </div>
+  return `
+    <article class="book">
+      <div class="cover">
+        <div class="fake-cover">Audio Lounge</div>
+      </div>
+      <div class="info">
+        <span class="tag">Audiobook</span>
+        <h3>${clean(book.title)}</h3>
+        <div class="author">${clean(author)}</div>
+        <div class="proof">Free public-domain narration from LibriVox.</div>
+        <div class="actions">
+          <a href="${book.url_librivox}" target="_blank">Listen</a>
+        </div>
+      </div>
+    </article>
+  `;
+}
 
-            <div class="links">
-              ${readLink ? `<a href="${readLink}" target="_blank">Preview</a>` : ""}
-              ${epubLink ? `<a class="secondary" href="${epubLink}" target="_blank">EPUB</a>` : ""}
-            </div>
-          </div>
-        </article>
-      `;
-    }
+async function searchBooks(){
+  const q = document.getElementById("searchInput").value.trim() || "business";
+  const hot = document.getElementById("hotItems");
+  const ebooks = document.getElementById("ebookList");
+  const audio = document.getElementById("audioList");
 
-    function audioCard(book) {
-      let author = "Unknown author";
+  hot.innerHTML = `<div class="loading">Loading hot drops...</div>`;
+  ebooks.innerHTML = `<div class="loading">Loading book shelf...</div>`;
+  audio.innerHTML = `<div class="loading">Loading audio lounge...</div>`;
 
-      if (book.authors && book.authors.length > 0) {
-        author = book.authors.map(a => `${a.first_name || ""} ${a.last_name || ""}`.trim()).join(", ");
-      }
+  try{
+    const res = await fetch("https://gutendex.com/books/?search=" + encodeURIComponent(q));
+    const data = await res.json();
+    const books = data.results || [];
+    const sorted = [...books].sort((a,b)=>(b.download_count||0)-(a.download_count||0));
 
-      return `
-        <article class="card">
-          <div class="cover">
-            <div class="cover-placeholder">Audiobook</div>
-          </div>
+    hot.innerHTML = sorted.length ? sorted.slice(0,4).map(b=>bookCard(b,true)).join("") : `<div class="loading">No hot items found.</div>`;
+    ebooks.innerHTML = books.length ? books.slice(0,12).map(b=>bookCard(b)).join("") : `<div class="loading">No ebooks found.</div>`;
+  }catch(e){
+    hot.innerHTML = `<div class="loading">Could not load hot items.</div>`;
+    ebooks.innerHTML = `<div class="loading">Could not load ebooks.</div>`;
+  }
 
-          <div class="card-body">
-            <span class="tag">Audiobook</span>
-            <h3>${safeText(book.title)}</h3>
-            <div class="author">By ${safeText(author)}</div>
+  try{
+    const res = await fetch("https://librivox.org/api/feed/audiobooks/?format=json&search=" + encodeURIComponent(q));
+    const data = await res.json();
+    const books = data.books || [];
+    audio.innerHTML = books.length ? books.slice(0,8).map(audioCard).join("") : `<div class="loading">No audiobooks found.</div>`;
+  }catch(e){
+    audio.innerHTML = `<div class="loading">Could not load audiobooks.</div>`;
+  }
+}
 
-            <div class="review">
-              Free public-domain narration available through LibriVox.
-            </div>
+searchBooks();
+</script>
 
-            <div class="links">
-              <a href="${book.url_librivox}" target="_blank">Listen Free</a>
-            </div>
-          </div>
-        </article>
-      `;
-    }
-
-    async function searchBooks() {
-      const query = document.getElementById("searchInput").value.trim() || "business";
-      const ebooks = document.getElementById("ebooks");
-      const hotItems = document.getElementById("hotItems");
-      const audiobooks = document.getElementById("audiobooks");
-
-      ebooks.innerHTML = `<div class="loading">Loading ebooks...</div>`;
-      hotItems.innerHTML = `<div class="loading">Loading hot items...</div>`;
-      audiobooks.innerHTML = `<div class="loading">Loading audiobooks...</div>`;
-
-      try {
-        const ebookResponse = await fetch(
-          "https://gutendex.com/books/?search=" + encodeURIComponent(query)
-        );
-
-        const ebookData = await ebookResponse.json();
-        const books = ebookData.results || [];
-
-        const sortedHot = [...books].sort((a, b) => {
-          return (b.download_count || 0) - (a.download_count || 0);
-        });
-
-        hotItems.innerHTML = sortedHot.length
-          ? sortedHot.slice(0, 4).map(book => bookCard(book, true)).join("")
-          : `<div class="loading">No hot items found.</div>`;
-
-        ebooks.innerHTML = books.length
-          ? books.slice(0, 12).map(book => bookCard(book)).join("")
-          : `<div class="loading">No ebooks found.</div>`;
-
-      } catch (error) {
-        ebooks.innerHTML = `<div class="loading">Could not load ebooks.</div>`;
-        hotItems.innerHTML = `<div class="loading">Could not load hot items.</div>`;
-      }
-
-      try {
-        const audioResponse = await fetch(
-          "https://librivox.org/api/feed/audiobooks/?format=json&search=" + encodeURIComponent(query)
-        );
-
-        const audioData = await audioResponse.json();
-        const audioBooks = audioData.books || [];
-
-        audiobooks.innerHTML = audioBooks.length
-          ? audioBooks.slice(0, 8).map(book => audioCard(book)).join("")
-          : `<div class="loading">No audiobooks found.</div>`;
-
-      } catch (error) {
-        audiobooks.innerHTML = `<div class="loading">Could not load audiobooks.</div>`;
-      }
-    }
-
-    searchBooks();
-  </script>
 </body>
 </html>
