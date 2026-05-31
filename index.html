@@ -16,6 +16,7 @@
   --paper:#fffaf1;
   --gold:#c2a15b;
   --silver:#bfc5c1;
+  --blue:#8ba7a0;
   --text:#17231d;
   --muted:#66736b;
   --line:#ded3bd;
@@ -259,6 +260,10 @@ button{
   border-top:5px solid var(--silver);
 }
 
+.product.trading{
+  border-top:5px solid var(--blue);
+}
+
 .product-buttons{
   display:flex;
   gap:10px;
@@ -417,12 +422,13 @@ footer{
 </header>
 
 <section class="hero">
-  <div class="kicker">Wealth • Investing • Real Estate • Personal Growth</div>
+  <div class="kicker">Wealth • Investing • Real Estate • Trading • Personal Growth</div>
   <h1>A real library for building knowledge and better decisions.</h1>
   <p>
     Capital Library brings together published books, free public-domain reading,
     learning paths, and practical resources focused on wealth building, investing,
-    real estate, business, economics, personal growth, hard assets, and selected fiction classics.
+    real estate, trading education, business, economics, personal growth, hard assets,
+    and selected fiction classics.
   </p>
   <div class="hero-buttons">
     <a href="#published" class="btn">View Published Books</a>
@@ -435,14 +441,14 @@ footer{
 <section class="stats">
   <div class="stat"><strong>Wealth</strong> Investing and money education</div>
   <div class="stat"><strong>Real Estate</strong> Property and cash-flow learning</div>
+  <div class="stat"><strong>Trading</strong> Market analysis and active investing</div>
   <div class="stat"><strong>Hard Assets</strong> Silver, metals and tangible assets</div>
-  <div class="stat"><strong>Self Growth</strong> Healing, mindset and discipline</div>
 </section>
 
 <section id="published">
   <div class="section-head">
-    <h2>Published Books</h2>
-    <p>Original books and direct resources</p>
+    <h2>Published Books & Resources</h2>
+    <p>Original books, guides and selected resources</p>
   </div>
 
   <div class="grid">
@@ -471,6 +477,18 @@ footer{
       </div>
     </div>
 
+    <div class="product featured trading">
+      <div class="kicker">Trading & Market Analysis</div>
+      <h3>VIP RealTimeTrades ASX Stocks, Crypto & US Markets</h3>
+      <p>
+        A monthly market resource with real-time trade alerts, stock and crypto analysis,
+        market research, trading explanations, and community discussion.
+      </p>
+      <div class="product-buttons">
+        <a class="btn" href="https://ruycorto.gumroad.com/l/gidjrr?a=812339299" target="_blank">View Membership</a>
+      </div>
+    </div>
+
     <div class="product featured silver">
       <div class="kicker">Silver & Hard Assets</div>
       <h3>To The Moon .999 Fine Silver Coin</h3>
@@ -487,7 +505,7 @@ footer{
 
 <section class="panel">
   <div class="search-row">
-    <input id="searchInput" value="wealth" placeholder="Search wealth, investing, real estate, business..." />
+    <input id="searchInput" value="wealth" placeholder="Search wealth, investing, real estate, trading, business..." />
     <button onclick="searchBooks()">Search Library</button>
   </div>
 
@@ -495,6 +513,7 @@ footer{
     <span class="chip" onclick="setCategory('wealth')">Wealth</span>
     <span class="chip" onclick="setCategory('investing')">Investing</span>
     <span class="chip" onclick="setCategory('real estate')">Real Estate</span>
+    <span class="chip" onclick="setCategory('trading')">Trading</span>
     <span class="chip" onclick="setCategory('finance')">Finance</span>
     <span class="chip" onclick="setCategory('economics')">Economics</span>
     <span class="chip" onclick="setCategory('business')">Business</span>
@@ -525,6 +544,11 @@ footer{
     <div class="map-card" onclick="setCategory('real estate')">
       <h3>Real Estate</h3>
       <p>Property, rent, ownership, cash flow, land, and practical deal thinking.</p>
+    </div>
+
+    <div class="map-card" onclick="setCategory('trading')">
+      <h3>Trading & Market Analysis</h3>
+      <p>Market research, trading education, stock analysis, crypto insights, and investment strategies.</p>
     </div>
 
     <div class="map-card" onclick="setCategory('silver')">
@@ -584,6 +608,17 @@ footer{
     </div>
 
     <div class="path">
+      <h3>Trading & Market Analysis</h3>
+      <p>Explore trading education, market research, chart reading, risk, stocks, and crypto.</p>
+      <ul>
+        <li>Search: trading</li>
+        <li>Search: stock market</li>
+        <li>Search: speculation</li>
+      </ul>
+      <a class="btn" onclick="setCategory('trading')">Open Path</a>
+    </div>
+
+    <div class="path">
       <h3>Hard Asset Basics</h3>
       <p>Explore physical silver, precious metals, collectibles, and tangible assets.</p>
       <ul>
@@ -621,7 +656,7 @@ footer{
 <section id="resources">
   <div class="section-head">
     <h2>Resource Desk</h2>
-    <p>Guides, tools, and study systems</p>
+    <p>Guides, tools, memberships and study systems</p>
   </div>
 
   <div class="grid">
@@ -636,13 +671,13 @@ footer{
     </div>
 
     <div class="resource">
-      <div class="kicker">Self Development</div>
-      <h3>Oops, I Dated a Narcissist</h3>
+      <div class="kicker">Trading & Market Analysis</div>
+      <h3>VIP RealTimeTrades ASX Stocks, Crypto & US Markets</h3>
       <p>
-        A personal-growth book placed under Self Development and Relationships
-        for readers focused on healing and emotional clarity.
+        A monthly membership covering real-time trade alerts, market analysis,
+        stock ideas, crypto insights, and active investing discussion.
       </p>
-      <a href="https://danidoono.gumroad.com/l/hklbsx" target="_blank" class="btn">Get the Book</a>
+      <a href="https://ruycorto.gumroad.com/l/gidjrr?a=812339299" target="_blank" class="btn">View Membership</a>
     </div>
 
     <div class="resource">
@@ -653,6 +688,16 @@ footer{
         and tangible wealth section of Capital Library.
       </p>
       <a href="https://allpatriots.gumroad.com/l/tothemooncoinfivecount?layout=discover&recommended_by=search&_gl=1*m2iayq*_ga*MTQwNjkyNjkyNS4xNzgwMjQ4NDI5*_ga_6LJN6D94N6*czE3ODAyNDg0MjgkbzEkZzEkdDE3ODAyNTE4MTgkajMkbDAkaDA.&a=812339299" target="_blank" class="btn">View Coin Collection</a>
+    </div>
+
+    <div class="resource">
+      <div class="kicker">Self Development</div>
+      <h3>Oops, I Dated a Narcissist</h3>
+      <p>
+        A personal-growth book placed under Self Development and Relationships
+        for readers focused on healing and emotional clarity.
+      </p>
+      <a href="https://danidoono.gumroad.com/l/hklbsx" target="_blank" class="btn">Get the Book</a>
     </div>
 
     <div class="resource">
@@ -694,7 +739,7 @@ footer{
 </main>
 
 <footer>
-  Capital Library — wealth, investing, real estate, hard assets, business, personal growth, and selected fiction classics.
+  Capital Library — wealth, investing, trading, real estate, hard assets, business, personal growth, and selected fiction classics.
 </footer>
 
 <script>
@@ -719,6 +764,7 @@ function getAuthor(book){
 function getCategory(book){
   const text = ((book.subjects || []).join(" ") + " " + book.title).toLowerCase();
 
+  if(text.includes("trading") || text.includes("stock") || text.includes("market") || text.includes("speculation")) return "Trading";
   if(text.includes("silver") || text.includes("gold") || text.includes("metal") || text.includes("coin")) return "Hard Assets";
   if(text.includes("finance") || text.includes("money") || text.includes("wealth")) return "Wealth";
   if(text.includes("investment") || text.includes("investing")) return "Investing";
