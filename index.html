@@ -1,12 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Capital Library</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <style>
 :root{
   --green:#1f5f4a;
@@ -432,604 +431,614 @@ footer{
   border-top:1px solid var(--line);
 }
 
+/* Dropdown category layout */
+.category-stack{
+  display:block;
+  margin-top:18px;
+}
+
+.accordion{
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:22px;
+  margin:16px 0;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+  scroll-margin-top:96px;
+}
+
+.accordion summary{
+  list-style:none;
+  cursor:pointer;
+  padding:19px 22px;
+  font-size:1.08rem;
+  font-weight:900;
+  color:var(--green-dark);
+  background:linear-gradient(135deg,#ffffff,var(--green-soft));
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:16px;
+}
+
+.accordion summary::-webkit-details-marker{
+  display:none;
+}
+
+.accordion summary::after{
+  content:"+";
+  width:32px;
+  height:32px;
+  flex:0 0 32px;
+  border-radius:999px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  background:var(--green-dark);
+  color:#fff;
+  font-size:1.35rem;
+  line-height:1;
+}
+
+.accordion[open] summary::after{
+  content:"−";
+}
+
+.accordion-body{
+  padding:20px;
+  border-top:1px solid var(--line);
+}
+
+.accordion-body > .section-head:first-child{
+  display:none;
+}
+
+.accordion .tool-panel:first-child,
+.accordion .grid:first-child,
+.accordion .tool-nav:first-child,
+.accordion .movers-wrap:first-child{
+  margin-top:0;
+}
+
+.section-intro{
+  color:var(--muted);
+  font-weight:700;
+  margin:0 0 16px;
+}
+
+.category-jump{
+  position:sticky;
+  top:68px;
+  z-index:10;
+  background:rgba(247,243,234,.94);
+  backdrop-filter:blur(10px);
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:10px;
+  display:flex;
+  gap:8px;
+  overflow-x:auto;
+  margin:18px 0;
+}
+
+.category-jump a{
+  flex:0 0 auto;
+  text-decoration:none;
+  color:var(--green-dark);
+  background:white;
+  border:1px solid var(--line);
+  border-radius:999px;
+  padding:9px 12px;
+  font-weight:900;
+  font-size:.82rem;
+}
+
+@media(max-width:850px){
+  .accordion summary{
+    padding:16px 18px;
+    font-size:1rem;
+  }
+
+  .accordion-body{
+    padding:16px;
+  }
+
+  .category-jump{
+    top:0;
+  }
+}
+
 </style>
 </head>
-
 <body>
-
 <header>
-  <div class="logo">Capital Library</div>
-  <nav>
-    <a href="#market-movers">Movers</a>
-    <a href="#tool-menu">Tools</a>
+<div class="logo">Capital Library</div>
+<nav><a href="#market-movers">Movers</a>
+    <a href="#trading-tools">Tools</a>
     <a href="#tradingview">Pine Script</a>
-    <a href="#hot-new">Featured</a>
-    <a href="#business-resources">Business</a>
+    <a href="#resources">Resources</a>
     <a href="#reading">Reading</a>
-    <a href="#self-development">Self Development</a>
-     </nav>
+    </nav>
 </header>
-
 <section class="hero">
-  <div class="kicker">Financial Tools • Trading • Business • Wealth</div>
-  <h1>Capital - Knowledge - Opportunity</h1>
-  <p>A simplified toolkit for traders, investors, business owners, and builders. Use the buttons below to jump straight into calculators, downloads, affiliate resources, and free reading.</p>
-  <div class="quick-actions">
-    <a class="btn" href="#tool-menu">Open Tool Menu</a>
-    <a class="btn secondary" href="#tradingview">Download Pine Script</a>
-    <a class="btn secondary" href="#resources">View Resources</a>
-  </div>
+<div class="kicker">Financial Tools • Trading • Business • Wealth</div>
+<h1>Capital - Knowledge - Opportunity</h1>
+<p>A simplified toolkit for traders, investors, business owners, and builders. Use the buttons below to jump straight into calculators, downloads, affiliate resources, and free reading.</p>
+<div class="quick-actions">
+<a class="btn" href="#tool-menu">Open Tool Menu</a>
+<a class="btn secondary" href="#tradingview">Download Pine Script</a>
+<a class="btn secondary" href="#resources">View Resources</a>
+</div>
 </section>
+<main><div class="category-jump"><a href="#market-movers">Movers</a><a href="#tool-menu">Menu</a><a href="#tradingview">Pine</a><a href="#trading-tools">Trading</a><a href="#real-estate-tools">Real Estate</a><a href="#business-tools">Business</a><a href="#wealth-tools">Wealth</a><a href="#resource-tools">Resource Tools</a><a href="#resources">Resources</a><a href="#reading">Reading</a><a href="#self-development">Self Dev</a></div>
+<details class="accordion" id="market-movers" open=""><summary>Daily Market Movers</summary><div class="accordion-body">
+<div class="movers-wrap">
 
-<main>
+<div class="ticker">
+<div class="ticker-track">
+<span class="up">NVDA +4.8%</span>
+<span class="down">TSLA -3.6%</span>
+<span class="up">AAPL +2.1%</span>
+<span class="down">AMZN -2.4%</span>
+<span class="up">META +3.2%</span>
+<span class="up">MSFT +1.8%</span>
+</div>
+</div>
+</div>
+</div></details>
+<details class="accordion" id="tool-menu"><summary>Tool Menu</summary><div class="accordion-body"><p class="section-intro">One-click access to all calculators and utilities</p>
 
-<section id="market-movers">
-  <div class="movers-wrap">
-    <div class="movers-title">Daily Market Movers</div>
-    <div class="ticker">
-      <div class="ticker-track">
-        <span class="up">NVDA +4.8%</span>
-        <span class="down">TSLA -3.6%</span>
-        <span class="up">AAPL +2.1%</span>
-        <span class="down">AMZN -2.4%</span>
-        <span class="up">META +3.2%</span>
-        <span class="up">MSFT +1.8%</span>
-             </div>
-    </div>
-  </div>
-</section>
+<div class="tool-nav">
+<a href="#position-size">Position Size</a>
+<a href="#risk-reward">Risk / Reward</a>
+<a href="#compound">Compound Interest</a>
+<a href="#journal">Trade Journal</a>
+<a href="#sessions">Market Clock</a>
+<a href="#pine-generator">Pine Generator</a>
+<a href="#strategy-compare">Strategy Compare</a>
+<a href="#rental">Rental Calculator</a>
+<a href="#brrrr">BRRRR Calculator</a>
+<a href="#startup">Startup Costs</a>
+<a href="#tax-tracker">Tax Tracker</a>
+<a href="#net-worth">Net Worth</a>
+<a href="#fire">FIRE Calculator</a>
+<a href="#vault-search">Vault Search</a>
+<a href="#opportunity">Daily Scanner</a>
+</div>
+</div></details>
+<details class="accordion" id="tradingview" open=""><summary>Free TradingView Strategy Package</summary><div class="accordion-body"><p class="section-intro">Download the Pine Script v6 tool</p>
 
-<section id="tool-menu">
-  <div class="section-head">
-    <h2>Tool Menu</h2>
-    <p>One-click access to all calculators and utilities</p>
-  </div>
+<div class="grid">
+<div class="card trading">
+<div class="kicker">Pine Script v6</div>
+<h3>Capital Library Strategy Package</h3>
+<p>Includes strategy modes, alerts, ATR exits, market-structure tools, liquidity concepts, FVGs, and a backtest dashboard.</p>
+<div class="buttons">
+<a class="btn" download="" href="capital-library-tradingview-strategy-package-github.pine">Download Pine Script</a>
+</div>
+</div>
+</div>
+</div></details>
+<details class="accordion" id="trading-tools"><summary>Trading &amp; Investing Tools</summary><div class="accordion-body"><p class="section-intro">Risk, entries, journals, sessions, and strategy planning</p>
 
-  <div class="tool-nav">
-    <a href="#position-size">Position Size</a>
-    <a href="#risk-reward">Risk / Reward</a>
-    <a href="#compound">Compound Interest</a>
-    <a href="#journal">Trade Journal</a>
-    <a href="#sessions">Market Clock</a>
-    <a href="#pine-generator">Pine Generator</a>
-    <a href="#strategy-compare">Strategy Compare</a>
-    <a href="#rental">Rental Calculator</a>
-    <a href="#brrrr">BRRRR Calculator</a>
-    <a href="#startup">Startup Costs</a>
-    <a href="#tax-tracker">Tax Tracker</a>
-    <a href="#net-worth">Net Worth</a>
-    <a href="#fire">FIRE Calculator</a>
-    <a href="#vault-search">Vault Search</a>
-    <a href="#opportunity">Daily Scanner</a>
-  </div>
-</section>
+<div class="tool-panel" id="position-size">
+<h3>1. Position Size Calculator</h3>
+<p>Calculate shares/contracts from account size, risk percentage, entry, and stop loss.</p>
+<div class="form-grid">
+<label>Account Size<input id="psAccount" type="number" value="10000"/></label>
+<label>Risk %<input id="psRisk" type="number" value="1"/></label>
+<label>Entry<input id="psEntry" type="number" value="100"/></label>
+<label>Stop Loss<input id="psStop" type="number" value="95"/></label>
+</div>
+<button class="btn small" onclick="positionSize()">Calculate</button>
+<div class="result" id="psResult">Enter values and calculate.</div>
+</div>
+<div class="tool-panel" id="risk-reward">
+<h3>2. Risk / Reward Calculator</h3>
+<p>Review entry, stop, target, risk, reward, and R:R ratio.</p>
+<div class="form-grid">
+<label>Entry<input id="rrEntry" type="number" value="100"/></label>
+<label>Stop<input id="rrStop" type="number" value="95"/></label>
+<label>Target<input id="rrTarget" type="number" value="112"/></label>
+</div>
+<button class="btn small" onclick="riskReward()">Calculate</button>
+<div class="result" id="rrResult">Enter values and calculate.</div>
+</div>
+<div class="tool-panel" id="compound">
+<h3>3. Compound Interest Calculator</h3>
+<p>Estimate future value using starting capital, monthly contributions, years, and return.</p>
+<div class="form-grid">
+<label>Starting Capital<input id="ciStart" type="number" value="5000"/></label>
+<label>Monthly Contribution<input id="ciMonthly" type="number" value="250"/></label>
+<label>Years<input id="ciYears" type="number" value="10"/></label>
+<label>Annual Return %<input id="ciReturn" type="number" value="8"/></label>
+</div>
+<button class="btn small" onclick="compoundCalc()">Calculate</button>
+<div class="result" id="ciResult">Enter values and calculate.</div>
+</div>
+<div class="tool-panel" id="journal">
+<h3>4. Trade Journal</h3>
+<p>Save trades in your browser and export the list as a CSV file.</p>
+<div class="form-grid">
+<label>Ticker<input id="tjTicker" placeholder="AAPL"/></label>
+<label>Entry<input id="tjEntry" type="number"/></label>
+<label>Exit<input id="tjExit" type="number"/></label>
+<label>Shares/Contracts<input id="tjQty" type="number" value="1"/></label>
+</div>
+<label>Notes<textarea id="tjNotes" placeholder="Setup, emotion, lesson learned..."></textarea></label>
+<div class="buttons">
+<button class="btn small" onclick="addTrade()">Add Trade</button>
+<button class="btn secondary small" onclick="clearTrades()">Clear</button>
+<button class="btn secondary small" onclick="exportTrades()">Export CSV</button>
+</div>
+<div class="table-wrap">
+<table id="tradeTable"><thead><tr><th>Ticker</th><th>Entry</th><th>Exit</th><th>Qty</th><th>P/L</th><th>Notes</th></tr></thead><tbody></tbody></table>
+</div>
+</div>
+<div class="tool-panel" id="sessions">
+<h3>5. Market Session Clock</h3>
+<p>Live UTC-based reference for major global market sessions.</p>
+<div class="result" id="sessionClock">Loading sessions...</div>
+</div>
+<div class="tool-panel" id="pine-generator">
+<h3>6. Pine Script Request Generator</h3>
+<p>Create a clean Pine Script strategy request template.</p>
+<div class="form-grid">
+<label>Market<select id="pgMarket"><option>Stocks</option><option>Futures</option><option>Forex</option><option>Crypto</option></select></label>
+<label>Timeframe<select id="pgTime"><option>1m</option><option>5m</option><option>15m</option><option>1H</option><option>Daily</option></select></label>
+<label>Style<select id="pgStyle"><option>Scalping</option><option>Day Trading</option><option>Swing Trading</option></select></label>
+<label>Strategy<select id="pgStrategy"><option>EMA Trend</option><option>Supertrend</option><option>VWAP Mean Reversion</option><option>Opening Range Breakout</option><option>Market Structure</option></select></label>
+</div>
+<button class="btn small" onclick="pineRequest()">Generate</button>
+<div class="result" id="pgResult">Generate a request template.</div>
+</div>
+<div class="tool-panel" id="strategy-compare">
+<h3>7. Strategy Comparison Tool</h3>
+<p>Quick comparison of common strategy types.</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Strategy</th><th>Best Use</th><th>Risk Profile</th><th>Common Timeframes</th></tr></thead>
+<tbody>
+<tr><td>EMA Trend</td><td>Trending markets</td><td>Medium</td><td>15m, 1H, Daily</td></tr>
+<tr><td>Supertrend</td><td>Clear directional moves</td><td>Medium</td><td>5m, 15m, 1H</td></tr>
+<tr><td>VWAP Reversion</td><td>Intraday mean reversion</td><td>Medium/High</td><td>1m, 5m, 15m</td></tr>
+<tr><td>Opening Range</td><td>Session breakouts</td><td>High</td><td>1m, 5m, 15m</td></tr>
+<tr><td>Market Structure</td><td>BOS/CHoCH shifts</td><td>Medium</td><td>5m, 15m, 1H</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div></details>
+<details class="accordion" id="real-estate-tools"><summary>Real Estate Tools</summary><div class="accordion-body"><p class="section-intro">Analyze rental cash flow, ROI, and BRRRR deals</p>
 
-<section id="tradingview">
-  <div class="section-head">
-    <h2>Free TradingView Strategy Package</h2>
-    <p>Download the Pine Script v6 tool</p>
-  </div>
+<div class="tool-panel" id="rental">
+<h3>8. Rental Property Calculator</h3>
+<div class="form-grid">
+<label>Purchase Price<input id="rpPrice" type="number" value="250000"/></label>
+<label>Monthly Rent<input id="rpRent" type="number" value="2200"/></label>
+<label>Monthly Expenses<input id="rpExpenses" type="number" value="900"/></label>
+<label>Down Payment<input id="rpDown" type="number" value="50000"/></label>
+</div>
+<button class="btn small" onclick="rentalCalc()">Calculate</button>
+<div class="result" id="rpResult">Enter values and calculate.</div>
+</div>
+<div class="tool-panel" id="brrrr">
+<h3>9. BRRRR Calculator</h3>
+<div class="form-grid">
+<label>Purchase<input id="brBuy" type="number" value="140000"/></label>
+<label>Rehab<input id="brRehab" type="number" value="35000"/></label>
+<label>ARV<input id="brArv" type="number" value="230000"/></label>
+<label>Refi LTV %<input id="brLtv" type="number" value="75"/></label>
+</div>
+<button class="btn small" onclick="brrrrCalc()">Calculate</button>
+<div class="result" id="brResult">Enter values and calculate.</div>
+</div>
+</div></details>
+<details class="accordion" id="business-tools"><summary>Business Tools</summary><div class="accordion-body"><p class="section-intro">Startup planning and tax deduction tracking</p>
 
-  <div class="grid">
-    <div class="card trading">
-      <div class="kicker">Pine Script v6</div>
-      <h3>Capital Library Strategy Package</h3>
-      <p>Includes strategy modes, alerts, ATR exits, market-structure tools, liquidity concepts, FVGs, and a backtest dashboard.</p>
-      <div class="buttons">
-        <a class="btn" href="capital-library-tradingview-strategy-package-github.pine" download>Download Pine Script</a>
-      </div>
-    </div>
-  </div>
-</section>
+<div class="tool-panel" id="startup">
+<h3>10. Business Startup Cost Calculator</h3>
+<div class="form-grid">
+<label>Equipment<input id="scEquip" type="number" value="2500"/></label>
+<label>Marketing<input id="scMarketing" type="number" value="1000"/></label>
+<label>Software<input id="scSoftware" type="number" value="500"/></label>
+<label>Inventory<input id="scInventory" type="number" value="3000"/></label>
+</div>
+<button class="btn small" onclick="startupCalc()">Calculate</button>
+<div class="result" id="scResult">Enter values and calculate.</div>
+</div>
+<div class="tool-panel" id="tax-tracker">
+<h3>11. Tax Deduction Tracker</h3>
+<div class="form-grid">
+<label>Category<input id="txCategory" placeholder="Software"/></label>
+<label>Description<input id="txDescription" placeholder="Monthly tool"/></label>
+<label>Amount<input id="txAmount" type="number" value="0"/></label>
+</div>
+<div class="buttons">
+<button class="btn small" onclick="addDeduction()">Add Deduction</button>
+<button class="btn secondary small" onclick="clearDeductions()">Clear</button>
+<button class="btn secondary small" onclick="exportDeductions()">Export CSV</button>
+</div>
+<div class="result" id="txTotal">Total deductions: $0.00</div>
+<div class="table-wrap">
+<table id="taxTable"><thead><tr><th>Category</th><th>Description</th><th>Amount</th></tr></thead><tbody></tbody></table>
+</div>
+</div>
+</div></details>
+<details class="accordion" id="wealth-tools"><summary>Wealth Tools</summary><div class="accordion-body"><p class="section-intro">Net worth, FIRE planning, and long-term capital growth</p>
 
-<section id="trading-tools">
-  <div class="section-head">
-    <h2>Trading & Investing Tools</h2>
-    <p>Risk, entries, journals, sessions, and strategy planning</p>
-  </div>
+<div class="tool-panel" id="net-worth">
+<h3>12. Net Worth Calculator</h3>
+<div class="form-grid">
+<label>Cash<input id="nwCash" type="number" value="5000"/></label>
+<label>Investments<input id="nwInvestments" type="number" value="25000"/></label>
+<label>Real Estate Equity<input id="nwRealEstate" type="number" value="50000"/></label>
+<label>Other Assets<input id="nwOther" type="number" value="0"/></label>
+<label>Mortgage<input id="nwMortgage" type="number" value="0"/></label>
+<label>Loans/Credit Cards<input id="nwDebt" type="number" value="5000"/></label>
+</div>
+<button class="btn small" onclick="netWorthCalc()">Calculate</button>
+<div class="result" id="nwResult">Enter values and calculate.</div>
+</div>
+<div class="tool-panel" id="fire">
+<h3>13. FIRE Calculator</h3>
+<div class="form-grid">
+<label>Annual Spending<input id="fiSpend" type="number" value="50000"/></label>
+<label>Current Investments<input id="fiCurrent" type="number" value="25000"/></label>
+<label>Monthly Savings<input id="fiSavings" type="number" value="1000"/></label>
+<label>Annual Return %<input id="fiReturn" type="number" value="7"/></label>
+</div>
+<button class="btn small" onclick="fireCalc()">Calculate</button>
+<div class="result" id="fiResult">Enter values and calculate.</div>
+</div>
+</div></details>
+<details class="accordion" id="resource-tools"><summary>Resource Tools</summary><div class="accordion-body"><p class="section-intro">Search resources and find a daily opportunity idea</p>
 
-  <div class="tool-panel" id="position-size">
-    <h3>1. Position Size Calculator</h3>
-    <p>Calculate shares/contracts from account size, risk percentage, entry, and stop loss.</p>
-    <div class="form-grid">
-      <label>Account Size<input id="psAccount" type="number" value="10000"></label>
-      <label>Risk %<input id="psRisk" type="number" value="1"></label>
-      <label>Entry<input id="psEntry" type="number" value="100"></label>
-      <label>Stop Loss<input id="psStop" type="number" value="95"></label>
-    </div>
-    <button class="btn small" onclick="positionSize()">Calculate</button>
-    <div class="result" id="psResult">Enter values and calculate.</div>
-  </div>
+<div class="tool-panel" id="vault-search">
+<h3>14. Free Resource Vault Search</h3>
+<label>Search<input id="vsSearch" oninput="vaultSearch()" placeholder="Search books, trading, real estate, business..."/></label>
+<div class="result" id="vsResult">Start typing to search.</div>
+</div>
+<div class="tool-panel" id="opportunity">
+<h3>15. Daily Opportunity Scanner</h3>
+<p>Generate a rotating idea for stocks, business, books, or real estate.</p>
+<button class="btn small" onclick="dailyOpportunity()">Scan Opportunity</button>
+<div class="result" id="opResult">Click the button for an idea.</div>
+</div>
+</div></details>
+<details class="accordion" id="resources"><summary>Featured Financial Resources</summary><div class="accordion-body">
 
-  <div class="tool-panel" id="risk-reward">
-    <h3>2. Risk / Reward Calculator</h3>
-    <p>Review entry, stop, target, risk, reward, and R:R ratio.</p>
-    <div class="form-grid">
-      <label>Entry<input id="rrEntry" type="number" value="100"></label>
-      <label>Stop<input id="rrStop" type="number" value="95"></label>
-      <label>Target<input id="rrTarget" type="number" value="112"></label>
-    </div>
-    <button class="btn small" onclick="riskReward()">Calculate</button>
-    <div class="result" id="rrResult">Enter values and calculate.</div>
-  </div>
+</div></details>
+<details class="accordion" id="hot-new"><summary>Featured Resources</summary><div class="accordion-body"><p class="section-intro">Featured books, tools, memberships and resources</p>
 
-  <div class="tool-panel" id="compound">
-    <h3>3. Compound Interest Calculator</h3>
-    <p>Estimate future value using starting capital, monthly contributions, years, and return.</p>
-    <div class="form-grid">
-      <label>Starting Capital<input id="ciStart" type="number" value="5000"></label>
-      <label>Monthly Contribution<input id="ciMonthly" type="number" value="250"></label>
-      <label>Years<input id="ciYears" type="number" value="10"></label>
-      <label>Annual Return %<input id="ciReturn" type="number" value="8"></label>
-    </div>
-    <button class="btn small" onclick="compoundCalc()">Calculate</button>
-    <div class="result" id="ciResult">Enter values and calculate.</div>
-  </div>
+<div class="grid">
+<div class="card realestate">
+<div class="kicker">Real Estate</div>
+<h3>Real Estate Investment Starter Guide</h3>
+<p>Learn rental property basics, cash flow, ROI, cap rate, expenses, and deal review.</p>
+<div class="buttons">
+<a class="btn" href="https://danidoono.gumroad.com/l/rfhxr" target="_blank">Access Resource</a>
+</div>
+</div>
+<div class="card business">
+<div class="kicker">Business &amp; Operations</div>
+<h3>Business Tools Collection</h3>
+<p>Accounting, taxes, bookkeeping, invoicing, office software and small-business systems.</p>
+<div class="buttons">
+<a class="btn" href="#business-resources">Explore Tools</a>
+</div>
+</div>
+<div class="card trading">
+<div class="kicker">Stock Education</div>
+<h3>CNC Academy Membership</h3>
+<p>Monthly stock-market learning membership for traders and investors.</p>
+<div class="buttons">
+<a class="btn" href="https://tallguytycoon.gumroad.com/l/Pxkij?a=812339299" target="_blank">Access Membership</a>
+</div>
+</div>
+<div class="card trading">
+<div class="kicker">Futures Trading</div>
+<h3>Live Futures Educational Platform</h3>
+<p>Education platform for futures markets, live learning, and trading concepts.</p>
+<div class="buttons">
+<a class="btn" href="https://simplemarketmetrics.gumroad.com/l/gpcfp?a=812339299" target="_blank">Access Platform</a>
+</div>
+</div>
+<div class="card trading">
+<div class="kicker">Trading Tools</div>
+<h3>Ninja Trader Wave Runner</h3>
+<p>A NinjaTrader tool for market movement, wave structure, and active trading workflows.</p>
+<div class="buttons">
+<a class="btn" href="https://simplemarketmetrics.gumroad.com/l/jeiyj?a=812339299" target="_blank">Access Tool</a>
+</div>
+</div>
+<div class="card trading">
+<div class="kicker">Market Analysis</div>
+<h3>VIP RealTimeTrades ASX Stocks, Crypto &amp; US Markets</h3>
+<p>Monthly market resource with trade alerts, analysis, research and community discussion.</p>
+<div class="buttons">
+<a class="btn" href="https://ruycorto.gumroad.com/l/gidjrr?a=812339299" target="_blank">Access Membership</a>
+</div>
+</div>
+<div class="card wealth">
+<div class="kicker">Wealth Building</div>
+<h3>Paycheck to Portfolio Membership</h3>
+<p>Move from income to portfolio-building, investing habits and long-term financial growth.</p>
+<div class="buttons">
+<a class="btn" href="https://paycheckportfolio.gumroad.com/l/iescv?a=812339299" target="_blank">Access Membership</a>
+</div>
+</div>
+<div class="card wealth">
+<div class="kicker">Faith &amp; Finance</div>
+<h3>The RED-E Society</h3>
+<p>A financial education community focused on faith, discipline and financial mastery.</p>
+<div class="buttons">
+<a class="btn" href="https://rogers1906.gumroad.com/l/fcxjqn?a=812339299" target="_blank">Access Society</a>
+</div>
+</div>
+<div class="card wealth">
+<div class="kicker">Wealth Transfer</div>
+<h3>A Wealth Transfer Survival Manual</h3>
+<p>A manual about managing a wealth transfer wisely and avoiding common mistakes.</p>
+<div class="buttons">
+<a class="btn" href="https://realthomsieloff.gumroad.com/l/fkmgcn?a=812339299" target="_blank">Access Manual</a>
+</div>
+</div>
+<div class="card silver">
+<div class="kicker">Hard Assets</div>
+<h3>To The Moon .999 Fine Silver Coin</h3>
+<p>A five-count collectible silver coin set for hard asset and collectible investors.</p>
+<div class="buttons">
+<a class="btn" href="https://allpatriots.gumroad.com/l/tothemooncoinfivecount?layout=discover&amp;recommended_by=search&amp;_gl=1*m2iayq*_ga*MTQwNjkyNjkyNS4xNzgwMjQ4NDI5*_ga_6LJN6D94N6*czE3ODAyNDg0MjgkbzEkZzEkdDE3ODAyNTE4MTgkajMkbDAkaDA.&amp;a=812339299" target="_blank">Access Now</a>
+</div>
+</div>
+<div class="card media">
+<div class="kicker">Independent Media</div>
+<h3>MDE.TV Premium Membership</h3>
+<p>Creator membership with original shows, podcasts, commentary, comedy and exclusive releases.</p>
+<div class="buttons">
+<a class="btn" href="https://samhyde.gumroad.com/l/HydeWars?a=812339299" target="_blank">Access Membership</a>
+</div>
+</div>
+</div>
+</div></details>
+<details class="accordion" id="business-resources"><summary>Business &amp; Operations Resources</summary><div class="accordion-body"><p class="section-intro">Taxes, bookkeeping, accounting, software and small-business tools</p>
 
-  <div class="tool-panel" id="journal">
-    <h3>4. Trade Journal</h3>
-    <p>Save trades in your browser and export the list as a CSV file.</p>
-    <div class="form-grid">
-      <label>Ticker<input id="tjTicker" placeholder="AAPL"></label>
-      <label>Entry<input id="tjEntry" type="number"></label>
-      <label>Exit<input id="tjExit" type="number"></label>
-      <label>Shares/Contracts<input id="tjQty" type="number" value="1"></label>
-    </div>
-    <label>Notes<textarea id="tjNotes" placeholder="Setup, emotion, lesson learned..."></textarea></label>
-    <div class="buttons">
-      <button class="btn small" onclick="addTrade()">Add Trade</button>
-      <button class="btn secondary small" onclick="clearTrades()">Clear</button>
-      <button class="btn secondary small" onclick="exportTrades()">Export CSV</button>
-    </div>
-    <div class="table-wrap">
-      <table id="tradeTable"><thead><tr><th>Ticker</th><th>Entry</th><th>Exit</th><th>Qty</th><th>P/L</th><th>Notes</th></tr></thead><tbody></tbody></table>
-    </div>
-  </div>
+<div class="grid">
+<div class="card business">
+<div class="preview"><div class="small">Tax • Accounting</div><div class="big">Small Business Owner Guide</div></div>
+<h3>The Taxes, Accounting, Bookkeeping Bible</h3>
+<p>Small-business guide covering taxes, bookkeeping, accounting, savings tips and IRS penalty avoidance.</p>
+<a class="btn" href="https://amzn.to/4ecDZu6" target="_blank">Access Now</a>
+</div>
+<div class="card business">
+<div class="preview"><div class="small">Bookkeeping</div><div class="big">All-in-One For Dummies</div></div>
+<h3>Bookkeeping All-in-One For Dummies</h3>
+<p>A reference for learning bookkeeping, financial tracking and business recordkeeping basics.</p>
+<a class="btn" href="https://amzn.to/4wVM65T" target="_blank">Access Now</a>
+</div>
+<div class="card business">
+<div class="preview"><div class="small">Taxes</div><div class="big">Deductions &amp; Tax Breaks 2026</div></div>
+<h3>Deductions and Tax Breaks 2026</h3>
+<p>A tax reference for deductions, tax breaks, planning opportunities and filing preparation.</p>
+<a class="btn" href="https://amzn.to/3RAB59T" target="_blank">Access Now</a>
+</div>
+<div class="card business">
+<div class="preview"><div class="small">Accounting</div><div class="big">Beginner Accounting Guide</div></div>
+<h3>Accounting for Beginners</h3>
+<p>Learn financial statements, taxes, managerial accounting and business performance basics.</p>
+<a class="btn" href="https://amzn.to/4vbVyjy" target="_blank">Access Now</a>
+</div>
+<div class="card business">
+<div class="preview"><div class="small">PDF Tools</div><div class="big">Edit • Convert • eSign</div></div>
+<h3>Scrivar PDF Suite Pro</h3>
+<p>PDF software for organizing, editing, converting, merging, signing, OCR and document workflows.</p>
+<a class="btn" href="https://amzn.to/4e2O9fQ" target="_blank">Access Now</a>
+</div>
+<div class="card business">
+<div class="preview"><div class="small">Migration</div><div class="big">PC Transfer Toolkit</div></div>
+<h3>Laplink PCmover Migration Software</h3>
+<p>Business migration software for moving files, settings, apps and user data.</p>
+<a class="btn" href="https://amzn.to/4fjj0a3" target="_blank">Access Now</a>
+</div>
+<div class="card business">
+<div class="preview"><div class="small">Billing</div><div class="big">Invoice Workflow</div></div>
+<h3>Express Invoice Billing Software</h3>
+<p>Billing and invoicing software for payments, customers and business billing.</p>
+<a class="btn" href="https://amzn.to/4akueHT" target="_blank">Access Now</a>
+</div>
+<div class="card business">
+<div class="preview"><div class="small">Office Suite</div><div class="big">Word • Excel • PowerPoint</div></div>
+<h3>Microsoft Office Home &amp; Business 2024</h3>
+<p>Desktop office apps for documents, spreadsheets, presentations and business work.</p>
+<a class="btn" href="https://amzn.to/49ysgU3" target="_blank">Access Now</a>
+</div>
+<div class="card business">
+<div class="preview"><div class="small">Finance</div><div class="big">Business &amp; Personal Money</div></div>
+<h3>Quicken Classic Business &amp; Personal</h3>
+<p>Finance software for managing accounts, expenses, income and financial tracking.</p>
+<a class="btn" href="https://amzn.to/4uJOMlv" target="_blank">Access Now</a>
+</div>
+<div class="card business">
+<div class="preview"><div class="small">Tax Software</div><div class="big">Premium &amp; Business Filing</div></div>
+<h3>H&amp;R Block Tax Software Premium &amp; Business 2025</h3>
+<p>Tax software for premium and business filing needs and small-business tax preparation.</p>
+<a class="btn" href="https://amzn.to/49wetgM" target="_blank">Access Now</a>
+</div>
+<div class="card business">
+<div class="preview"><div class="small">Workforce</div><div class="big">Cloud Time Clock</div></div>
+<h3>NGTeco Cloud-Based Time Clock</h3>
+<p>WiFi attendance machine for time tracking, clock-in and workforce management.</p>
+<a class="btn" href="https://amzn.to/4dI2Aa0" target="_blank">Access Now</a>
+</div>
+</div>
+</div></details>
+<details class="accordion" id="reading"><summary>Recommended Finance Reading</summary><div class="accordion-body"><p class="section-intro">Curated books for wealth, business and economics</p>
 
-  <div class="tool-panel" id="sessions">
-    <h3>5. Market Session Clock</h3>
-    <p>Live UTC-based reference for major global market sessions.</p>
-    <div class="result" id="sessionClock">Loading sessions...</div>
-  </div>
+<div class="grid">
+<div class="card wealth">
+<div class="preview"><div class="small">Wealth</div><div class="big">The Richest Man in Babylon</div></div>
+<h3>The Richest Man in Babylon</h3>
+<p>A classic personal finance book about saving, discipline and building wealth.</p>
+<div class="buttons">
+<a class="btn" href="https://www.gutenberg.org/ebooks/72170" target="_blank">Read Free</a>
+</div>
+</div>
+<div class="card wealth">
+<div class="preview"><div class="small">Business Classic</div><div class="big">The Art of Money Getting</div></div>
+<h3>The Art of Money Getting</h3>
+<p>P.T. Barnum’s classic book on business habits, money discipline and practical success.</p>
+<div class="buttons">
+<a class="btn" href="https://www.gutenberg.org/cache/epub/8581/pg8581-images.html" target="_blank">Read Online</a>
+<a class="btn light" href="https://www.gutenberg.org/ebooks/8581.epub.images" target="_blank">Download EPUB</a>
+</div>
+</div>
+<div class="card wealth">
+<div class="preview"><div class="small">Economics</div><div class="big">The Wealth of Nations</div></div>
+<h3>The Wealth of Nations</h3>
+<p>Adam Smith’s foundational work on markets, labor, productivity, trade and economic systems.</p>
+<div class="buttons">
+<a class="btn" href="https://www.gutenberg.org/cache/epub/3300/pg3300-images.html" target="_blank">Read Online</a>
+<a class="btn light" href="https://www.gutenberg.org/ebooks/3300.epub.images" target="_blank">Download EPUB</a>
+</div>
+</div>
+<div class="card business">
+<div class="preview"><div class="small">Opportunity</div><div class="big">Acres of Diamonds</div></div>
+<h3>Acres of Diamonds</h3>
+<p>A short business classic about recognizing value, discipline and opportunity close to home.</p>
+<div class="buttons">
+<a class="btn" href="https://www.gutenberg.org/cache/epub/368/pg368-images.html" target="_blank">Read Online</a>
+<a class="btn light" href="https://www.gutenberg.org/ebooks/368.epub.images" target="_blank">Download EPUB</a>
+</div>
+</div>
+<div class="card realestate">
+<div class="preview"><div class="small">Real Estate</div><div class="big">Investment Starter Guide</div></div>
+<h3>Real Estate Investment Starter Guide</h3>
+<p>Your guide for cash flow, ROI, cap rate, expenses and rental property deal review.</p>
+<div class="buttons">
+<a class="btn" href="https://danidoono.gumroad.com/l/rfhxr" target="_blank">Access Resource</a>
+</div>
+</div>
+</div>
+</div></details>
+<details class="accordion" id="self-development"><summary>Self Development</summary><div class="accordion-body">
 
-  <div class="tool-panel" id="pine-generator">
-    <h3>6. Pine Script Request Generator</h3>
-    <p>Create a clean Pine Script strategy request template.</p>
-    <div class="form-grid">
-      <label>Market<select id="pgMarket"><option>Stocks</option><option>Futures</option><option>Forex</option><option>Crypto</option></select></label>
-      <label>Timeframe<select id="pgTime"><option>1m</option><option>5m</option><option>15m</option><option>1H</option><option>Daily</option></select></label>
-      <label>Style<select id="pgStyle"><option>Scalping</option><option>Day Trading</option><option>Swing Trading</option></select></label>
-      <label>Strategy<select id="pgStrategy"><option>EMA Trend</option><option>Supertrend</option><option>VWAP Mean Reversion</option><option>Opening Range Breakout</option><option>Market Structure</option></select></label>
-    </div>
-    <button class="btn small" onclick="pineRequest()">Generate</button>
-    <div class="result" id="pgResult">Generate a request template.</div>
-  </div>
-
-  <div class="tool-panel" id="strategy-compare">
-    <h3>7. Strategy Comparison Tool</h3>
-    <p>Quick comparison of common strategy types.</p>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>Strategy</th><th>Best Use</th><th>Risk Profile</th><th>Common Timeframes</th></tr></thead>
-        <tbody>
-          <tr><td>EMA Trend</td><td>Trending markets</td><td>Medium</td><td>15m, 1H, Daily</td></tr>
-          <tr><td>Supertrend</td><td>Clear directional moves</td><td>Medium</td><td>5m, 15m, 1H</td></tr>
-          <tr><td>VWAP Reversion</td><td>Intraday mean reversion</td><td>Medium/High</td><td>1m, 5m, 15m</td></tr>
-          <tr><td>Opening Range</td><td>Session breakouts</td><td>High</td><td>1m, 5m, 15m</td></tr>
-          <tr><td>Market Structure</td><td>BOS/CHoCH shifts</td><td>Medium</td><td>5m, 15m, 1H</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
-
-<section id="real-estate-tools">
-  <div class="section-head">
-    <h2>Real Estate Tools</h2>
-    <p>Analyze rental cash flow, ROI, and BRRRR deals</p>
-  </div>
-
-  <div class="tool-panel" id="rental">
-    <h3>8. Rental Property Calculator</h3>
-    <div class="form-grid">
-      <label>Purchase Price<input id="rpPrice" type="number" value="250000"></label>
-      <label>Monthly Rent<input id="rpRent" type="number" value="2200"></label>
-      <label>Monthly Expenses<input id="rpExpenses" type="number" value="900"></label>
-      <label>Down Payment<input id="rpDown" type="number" value="50000"></label>
-    </div>
-    <button class="btn small" onclick="rentalCalc()">Calculate</button>
-    <div class="result" id="rpResult">Enter values and calculate.</div>
-  </div>
-
-  <div class="tool-panel" id="brrrr">
-    <h3>9. BRRRR Calculator</h3>
-    <div class="form-grid">
-      <label>Purchase<input id="brBuy" type="number" value="140000"></label>
-      <label>Rehab<input id="brRehab" type="number" value="35000"></label>
-      <label>ARV<input id="brArv" type="number" value="230000"></label>
-      <label>Refi LTV %<input id="brLtv" type="number" value="75"></label>
-    </div>
-    <button class="btn small" onclick="brrrrCalc()">Calculate</button>
-    <div class="result" id="brResult">Enter values and calculate.</div>
-  </div>
-</section>
-
-<section id="business-tools">
-  <div class="section-head">
-    <h2>Business Tools</h2>
-    <p>Startup planning and tax deduction tracking</p>
-  </div>
-
-  <div class="tool-panel" id="startup">
-    <h3>10. Business Startup Cost Calculator</h3>
-    <div class="form-grid">
-      <label>Equipment<input id="scEquip" type="number" value="2500"></label>
-      <label>Marketing<input id="scMarketing" type="number" value="1000"></label>
-      <label>Software<input id="scSoftware" type="number" value="500"></label>
-      <label>Inventory<input id="scInventory" type="number" value="3000"></label>
-    </div>
-    <button class="btn small" onclick="startupCalc()">Calculate</button>
-    <div class="result" id="scResult">Enter values and calculate.</div>
-  </div>
-
-  <div class="tool-panel" id="tax-tracker">
-    <h3>11. Tax Deduction Tracker</h3>
-    <div class="form-grid">
-      <label>Category<input id="txCategory" placeholder="Software"></label>
-      <label>Description<input id="txDescription" placeholder="Monthly tool"></label>
-      <label>Amount<input id="txAmount" type="number" value="0"></label>
-    </div>
-    <div class="buttons">
-      <button class="btn small" onclick="addDeduction()">Add Deduction</button>
-      <button class="btn secondary small" onclick="clearDeductions()">Clear</button>
-      <button class="btn secondary small" onclick="exportDeductions()">Export CSV</button>
-    </div>
-    <div class="result" id="txTotal">Total deductions: $0.00</div>
-    <div class="table-wrap">
-      <table id="taxTable"><thead><tr><th>Category</th><th>Description</th><th>Amount</th></tr></thead><tbody></tbody></table>
-    </div>
-  </div>
-</section>
-
-<section id="wealth-tools">
-  <div class="section-head">
-    <h2>Wealth Tools</h2>
-    <p>Net worth, FIRE planning, and long-term capital growth</p>
-  </div>
-
-  <div class="tool-panel" id="net-worth">
-    <h3>12. Net Worth Calculator</h3>
-    <div class="form-grid">
-      <label>Cash<input id="nwCash" type="number" value="5000"></label>
-      <label>Investments<input id="nwInvestments" type="number" value="25000"></label>
-      <label>Real Estate Equity<input id="nwRealEstate" type="number" value="50000"></label>
-      <label>Other Assets<input id="nwOther" type="number" value="0"></label>
-      <label>Mortgage<input id="nwMortgage" type="number" value="0"></label>
-      <label>Loans/Credit Cards<input id="nwDebt" type="number" value="5000"></label>
-    </div>
-    <button class="btn small" onclick="netWorthCalc()">Calculate</button>
-    <div class="result" id="nwResult">Enter values and calculate.</div>
-  </div>
-
-  <div class="tool-panel" id="fire">
-    <h3>13. FIRE Calculator</h3>
-    <div class="form-grid">
-      <label>Annual Spending<input id="fiSpend" type="number" value="50000"></label>
-      <label>Current Investments<input id="fiCurrent" type="number" value="25000"></label>
-      <label>Monthly Savings<input id="fiSavings" type="number" value="1000"></label>
-      <label>Annual Return %<input id="fiReturn" type="number" value="7"></label>
-    </div>
-    <button class="btn small" onclick="fireCalc()">Calculate</button>
-    <div class="result" id="fiResult">Enter values and calculate.</div>
-  </div>
-</section>
-
-<section id="resource-tools">
-  <div class="section-head">
-    <h2>Resource Tools</h2>
-    <p>Search resources and find a daily opportunity idea</p>
-  </div>
-
-  <div class="tool-panel" id="vault-search">
-    <h3>14. Free Resource Vault Search</h3>
-    <label>Search<input id="vsSearch" placeholder="Search books, trading, real estate, business..." oninput="vaultSearch()"></label>
-    <div class="result" id="vsResult">Start typing to search.</div>
-  </div>
-
-  <div class="tool-panel" id="opportunity">
-    <h3>15. Daily Opportunity Scanner</h3>
-    <p>Generate a rotating idea for stocks, business, books, or real estate.</p>
-    <button class="btn small" onclick="dailyOpportunity()">Scan Opportunity</button>
-    <div class="result" id="opResult">Click the button for an idea.</div>
-  </div>
-</section>
-
-<section id="resources" class="resource-divider">
-  <div class="section-head">
-    <h2>Featured Financial Resources</h2>
-      </div>
-</section>
-
-<section id="hot-new">
-  <div class="section-head">
-    <h2>Feature Resources</h2>
-    <p>Featured books, tools, memberships and resources</p>
-  </div>
-
-  <div class="grid">
-    
-
-    <div class="card realestate">
-      <div class="kicker">Real Estate</div>
-      <h3>Real Estate Investment Starter Guide</h3>
-      <p>Learn rental property basics, cash flow, ROI, cap rate, expenses, and deal review.</p>
-      <div class="buttons">
-        <a class="btn" href="https://danidoono.gumroad.com/l/rfhxr" target="_blank">Access Resource</a>
-      </div>
-    </div>
-
-    <div class="card business">
-      <div class="kicker">Business & Operations</div>
-      <h3>Business Tools Collection</h3>
-      <p>Accounting, taxes, bookkeeping, invoicing, office software and small-business systems.</p>
-      <div class="buttons">
-        <a class="btn" href="#business-resources">Explore Tools</a>
-      </div>
-    </div>
-
-    <div class="card trading">
-      <div class="kicker">Stock Education</div>
-      <h3>CNC Academy Membership</h3>
-      <p>Monthly stock-market learning membership for traders and investors.</p>
-      <div class="buttons">
-        <a class="btn" href="https://tallguytycoon.gumroad.com/l/Pxkij?a=812339299" target="_blank">Access Membership</a>
-      </div>
-    </div>
-
-    <div class="card trading">
-      <div class="kicker">Futures Trading</div>
-      <h3>Live Futures Educational Platform</h3>
-      <p>Education platform for futures markets, live learning, and trading concepts.</p>
-      <div class="buttons">
-        <a class="btn" href="https://simplemarketmetrics.gumroad.com/l/gpcfp?a=812339299" target="_blank">Access Platform</a>
-      </div>
-    </div>
-
-    <div class="card trading">
-      <div class="kicker">Trading Tools</div>
-      <h3>Ninja Trader Wave Runner</h3>
-      <p>A NinjaTrader tool for market movement, wave structure, and active trading workflows.</p>
-      <div class="buttons">
-        <a class="btn" href="https://simplemarketmetrics.gumroad.com/l/jeiyj?a=812339299" target="_blank">Access Tool</a>
-      </div>
-    </div>
-
-    <div class="card trading">
-      <div class="kicker">Market Analysis</div>
-      <h3>VIP RealTimeTrades ASX Stocks, Crypto & US Markets</h3>
-      <p>Monthly market resource with trade alerts, analysis, research and community discussion.</p>
-      <div class="buttons">
-        <a class="btn" href="https://ruycorto.gumroad.com/l/gidjrr?a=812339299" target="_blank">Access Membership</a>
-      </div>
-    </div>
-
-    <div class="card wealth">
-      <div class="kicker">Wealth Building</div>
-      <h3>Paycheck to Portfolio Membership</h3>
-      <p>Move from income to portfolio-building, investing habits and long-term financial growth.</p>
-      <div class="buttons">
-        <a class="btn" href="https://paycheckportfolio.gumroad.com/l/iescv?a=812339299" target="_blank">Access Membership</a>
-      </div>
-    </div>
-
-    <div class="card wealth">
-      <div class="kicker">Faith & Finance</div>
-      <h3>The RED-E Society</h3>
-      <p>A financial education community focused on faith, discipline and financial mastery.</p>
-      <div class="buttons">
-        <a class="btn" href="https://rogers1906.gumroad.com/l/fcxjqn?a=812339299" target="_blank">Access Society</a>
-      </div>
-    </div>
-
-    <div class="card wealth">
-      <div class="kicker">Wealth Transfer</div>
-      <h3>A Wealth Transfer Survival Manual</h3>
-      <p>A manual about managing a wealth transfer wisely and avoiding common mistakes.</p>
-      <div class="buttons">
-        <a class="btn" href="https://realthomsieloff.gumroad.com/l/fkmgcn?a=812339299" target="_blank">Access Manual</a>
-      </div>
-    </div>
-
-    <div class="card silver">
-      <div class="kicker">Hard Assets</div>
-      <h3>To The Moon .999 Fine Silver Coin</h3>
-      <p>A five-count collectible silver coin set for hard asset and collectible investors.</p>
-      <div class="buttons">
-        <a class="btn" href="https://allpatriots.gumroad.com/l/tothemooncoinfivecount?layout=discover&recommended_by=search&_gl=1*m2iayq*_ga*MTQwNjkyNjkyNS4xNzgwMjQ4NDI5*_ga_6LJN6D94N6*czE3ODAyNDg0MjgkbzEkZzEkdDE3ODAyNTE4MTgkajMkbDAkaDA.&a=812339299" target="_blank">Access Now</a>
-      </div>
-    </div>
-
-    <div class="card media">
-      <div class="kicker">Independent Media</div>
-      <h3>MDE.TV Premium Membership</h3>
-      <p>Creator membership with original shows, podcasts, commentary, comedy and exclusive releases.</p>
-      <div class="buttons">
-        <a class="btn" href="https://samhyde.gumroad.com/l/HydeWars?a=812339299" target="_blank">Access Membership</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="business-resources">
-  <div class="section-head">
-    <h2>Business & Operations Resources</h2>
-    <p>Taxes, bookkeeping, accounting, software and small-business tools</p>
-  </div>
-
-  <div class="grid">
-    <div class="card business">
-      <div class="preview"><div class="small">Tax • Accounting</div><div class="big">Small Business Owner Guide</div></div>
-      <h3>The Taxes, Accounting, Bookkeeping Bible</h3>
-      <p>Small-business guide covering taxes, bookkeeping, accounting, savings tips and IRS penalty avoidance.</p>
-      <a class="btn" href="https://amzn.to/4ecDZu6" target="_blank">Access Now</a>
-    </div>
-
-    <div class="card business">
-      <div class="preview"><div class="small">Bookkeeping</div><div class="big">All-in-One For Dummies</div></div>
-      <h3>Bookkeeping All-in-One For Dummies</h3>
-      <p>A reference for learning bookkeeping, financial tracking and business recordkeeping basics.</p>
-      <a class="btn" href="https://amzn.to/4wVM65T" target="_blank">Access Now</a>
-    </div>
-
-    <div class="card business">
-      <div class="preview"><div class="small">Taxes</div><div class="big">Deductions & Tax Breaks 2026</div></div>
-      <h3>Deductions and Tax Breaks 2026</h3>
-      <p>A tax reference for deductions, tax breaks, planning opportunities and filing preparation.</p>
-      <a class="btn" href="https://amzn.to/3RAB59T" target="_blank">Access Now</a>
-    </div>
-
-    <div class="card business">
-      <div class="preview"><div class="small">Accounting</div><div class="big">Beginner Accounting Guide</div></div>
-      <h3>Accounting for Beginners</h3>
-      <p>Learn financial statements, taxes, managerial accounting and business performance basics.</p>
-      <a class="btn" href="https://amzn.to/4vbVyjy" target="_blank">Access Now</a>
-    </div>
-
-    <div class="card business">
-      <div class="preview"><div class="small">PDF Tools</div><div class="big">Edit • Convert • eSign</div></div>
-      <h3>Scrivar PDF Suite Pro</h3>
-      <p>PDF software for organizing, editing, converting, merging, signing, OCR and document workflows.</p>
-      <a class="btn" href="https://amzn.to/4e2O9fQ" target="_blank">Access Now</a>
-    </div>
-
-    <div class="card business">
-      <div class="preview"><div class="small">Migration</div><div class="big">PC Transfer Toolkit</div></div>
-      <h3>Laplink PCmover Migration Software</h3>
-      <p>Business migration software for moving files, settings, apps and user data.</p>
-      <a class="btn" href="https://amzn.to/4fjj0a3" target="_blank">Access Now</a>
-    </div>
-
-    <div class="card business">
-      <div class="preview"><div class="small">Billing</div><div class="big">Invoice Workflow</div></div>
-      <h3>Express Invoice Billing Software</h3>
-      <p>Billing and invoicing software for payments, customers and business billing.</p>
-      <a class="btn" href="https://amzn.to/4akueHT" target="_blank">Access Now</a>
-    </div>
-
-    <div class="card business">
-      <div class="preview"><div class="small">Office Suite</div><div class="big">Word • Excel • PowerPoint</div></div>
-      <h3>Microsoft Office Home & Business 2024</h3>
-      <p>Desktop office apps for documents, spreadsheets, presentations and business work.</p>
-      <a class="btn" href="https://amzn.to/49ysgU3" target="_blank">Access Now</a>
-    </div>
-
-    <div class="card business">
-      <div class="preview"><div class="small">Finance</div><div class="big">Business & Personal Money</div></div>
-      <h3>Quicken Classic Business & Personal</h3>
-      <p>Finance software for managing accounts, expenses, income and financial tracking.</p>
-      <a class="btn" href="https://amzn.to/4uJOMlv" target="_blank">Access Now</a>
-    </div>
-
-    <div class="card business">
-      <div class="preview"><div class="small">Tax Software</div><div class="big">Premium & Business Filing</div></div>
-      <h3>H&R Block Tax Software Premium & Business 2025</h3>
-      <p>Tax software for premium and business filing needs and small-business tax preparation.</p>
-      <a class="btn" href="https://amzn.to/49wetgM" target="_blank">Access Now</a>
-    </div>
-
-    <div class="card business">
-      <div class="preview"><div class="small">Workforce</div><div class="big">Cloud Time Clock</div></div>
-      <h3>NGTeco Cloud-Based Time Clock</h3>
-      <p>WiFi attendance machine for time tracking, clock-in and workforce management.</p>
-      <a class="btn" href="https://amzn.to/4dI2Aa0" target="_blank">Access Now</a>
-    </div>
-  </div>
-</section>
-
-<section id="reading">
-  <div class="section-head">
-    <h2>Recommended Finance Reading</h2>
-    <p>Curated books for wealth, business and economics</p>
-  </div>
-
-  <div class="grid">
-    <div class="card wealth">
-      <div class="preview"><div class="small">Wealth</div><div class="big">The Richest Man in Babylon</div></div>
-      <h3>The Richest Man in Babylon</h3>
-      <p>A classic personal finance book about saving, discipline and building wealth.</p>
-      <div class="buttons">
-        <a class="btn" href="https://www.gutenberg.org/ebooks/72170" target="_blank">Read Free</a>
-      </div>
-    </div>
-
-    <div class="card wealth">
-      <div class="preview"><div class="small">Business Classic</div><div class="big">The Art of Money Getting</div></div>
-      <h3>The Art of Money Getting</h3>
-      <p>P.T. Barnum’s classic book on business habits, money discipline and practical success.</p>
-      <div class="buttons">
-        <a class="btn" href="https://www.gutenberg.org/cache/epub/8581/pg8581-images.html" target="_blank">Read Online</a>
-        <a class="btn light" href="https://www.gutenberg.org/ebooks/8581.epub.images" target="_blank">Download EPUB</a>
-      </div>
-    </div>
-
-    <div class="card wealth">
-      <div class="preview"><div class="small">Economics</div><div class="big">The Wealth of Nations</div></div>
-      <h3>The Wealth of Nations</h3>
-      <p>Adam Smith’s foundational work on markets, labor, productivity, trade and economic systems.</p>
-      <div class="buttons">
-        <a class="btn" href="https://www.gutenberg.org/cache/epub/3300/pg3300-images.html" target="_blank">Read Online</a>
-        <a class="btn light" href="https://www.gutenberg.org/ebooks/3300.epub.images" target="_blank">Download EPUB</a>
-      </div>
-    </div>
-
-    <div class="card business">
-      <div class="preview"><div class="small">Opportunity</div><div class="big">Acres of Diamonds</div></div>
-      <h3>Acres of Diamonds</h3>
-      <p>A short business classic about recognizing value, discipline and opportunity close to home.</p>
-      <div class="buttons">
-        <a class="btn" href="https://www.gutenberg.org/cache/epub/368/pg368-images.html" target="_blank">Read Online</a>
-        <a class="btn light" href="https://www.gutenberg.org/ebooks/368.epub.images" target="_blank">Download EPUB</a>
-      </div>
-    </div>
-
-    <div class="card realestate">
-      <div class="preview"><div class="small">Real Estate</div><div class="big">Investment Starter Guide</div></div>
-      <h3>Real Estate Investment Starter Guide</h3>
-      <p>Your guide for cash flow, ROI, cap rate, expenses and rental property deal review.</p>
-      <div class="buttons">
-        <a class="btn" href="https://danidoono.gumroad.com/l/rfhxr" target="_blank">Access Resource</a>
-      </div>
-    </div>
-
-    
-  </div>
-</section>
-
-<section id="self-development" class="resource-divider">
-  <div class="section-head">
-    <h2>Self Development</h2>
-  </div>
-
-  <div class="grid">
-    <div class="card relationship">
-      <div class="kicker">Self Development</div>
-      <h3>Oops, I Dated a Narcissist: How to Heal</h3>
-      <p>A personal-growth book for healing, rebuilding confidence, and moving forward with clarity.</p>
-      <div class="buttons">
-        <a class="btn" href="https://www.amazon.com/Oops-Dated-Narcissist-Won-Heal-ebook/dp/B0GYSM6PK9" target="_blank">Access Now</a>
-        <a class="btn light" href="https://danidoono.gumroad.com/l/hklbsx" target="_blank">Direct Copy</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-
+<div class="grid">
+<div class="card relationship">
+<div class="kicker">Self Development</div>
+<h3>Oops, I Dated a Narcissist: How to Heal</h3>
+<p>A personal-growth book for healing, rebuilding confidence, and moving forward with clarity.</p>
+<div class="buttons">
+<a class="btn" href="https://www.amazon.com/Oops-Dated-Narcissist-Won-Heal-ebook/dp/B0GYSM6PK9" target="_blank">Access Now</a>
+<a class="btn light" href="https://danidoono.gumroad.com/l/hklbsx" target="_blank">Direct Copy</a>
+</div>
+</div>
+</div>
+</div></details>
 </main>
-
 <footer>
   Capital Library — tools, books, calculators, and resources for builders, investors, and operators.
 </footer>
-
 <script>
 const money = value => "$" + Number(value || 0).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2});
 const num = id => Number(document.getElementById(id).value || 0);
@@ -1249,6 +1258,5 @@ renderDeductions();
 updateSessions();
 setInterval(updateSessions, 1000);
 </script>
-
 </body>
 </html>
