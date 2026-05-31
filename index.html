@@ -9,9 +9,9 @@
 
 <style>
 :root{
-  --green:#0f3024;
-  --green2:#173d30;
-  --green3:#245743;
+  --green:#1f5f49;
+  --green2:#2f7a5f;
+  --green3:#4b9477;
   --cream:#f5efe3;
   --paper:#fffaf1;
   --gold:#c2a15b;
@@ -51,7 +51,7 @@ header{
 }
 
 nav a{
-  color:#eadfc8;
+  color:#f5ead3;
   text-decoration:none;
   margin-left:18px;
   font-weight:700;
@@ -60,8 +60,8 @@ nav a{
 
 .hero{
   background:
-    linear-gradient(rgba(15,48,36,.9),rgba(15,48,36,.95)),
-    radial-gradient(circle at top right,#3b7059,transparent 35%);
+    linear-gradient(rgba(31,95,73,.88),rgba(31,95,73,.92)),
+    radial-gradient(circle at top right,#7ab89a,transparent 36%);
   color:white;
   padding:90px 7%;
 }
@@ -84,7 +84,7 @@ nav a{
 
 .hero p{
   max-width:760px;
-  color:#e8dec9;
+  color:#f1e8d6;
   line-height:1.8;
   font-size:1.1rem;
 }
@@ -141,54 +141,6 @@ main{
   margin-bottom:4px;
 }
 
-.panel{
-  background:var(--paper);
-  border:1px solid var(--line);
-  border-radius:24px;
-  padding:24px;
-  box-shadow:0 14px 34px rgba(20,40,30,.08);
-  margin-bottom:34px;
-}
-
-.search-row{
-  display:flex;
-  gap:12px;
-  margin-bottom:18px;
-}
-
-input{
-  flex:1;
-  padding:15px;
-  border:1px solid var(--line);
-  border-radius:12px;
-  font-size:16px;
-}
-
-button{
-  background:var(--green);
-  color:white;
-  border:0;
-  padding:15px 22px;
-  border-radius:12px;
-  font-weight:800;
-  cursor:pointer;
-}
-
-.chips{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-}
-
-.chip{
-  background:#e7dcc6;
-  color:var(--green);
-  padding:10px 14px;
-  border-radius:999px;
-  font-weight:800;
-  cursor:pointer;
-}
-
 .section-head{
   margin:48px 0 18px;
   display:flex;
@@ -211,11 +163,11 @@ button{
 
 .grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:20px;
 }
 
-.path,.resource,.book,.product{
+.product,.resource,.book{
   background:var(--paper);
   border:1px solid var(--line);
   border-radius:22px;
@@ -223,36 +175,31 @@ button{
   box-shadow:0 12px 30px rgba(20,40,30,.07);
 }
 
-.path,.resource,.product{
+.product,.resource{
   padding:24px;
 }
 
-.path h3,.resource h3,.product h3{
+.product h3,.resource h3{
   font-family:"Libre Baskerville",serif;
   font-size:1.35rem;
   margin:0 0 10px;
 }
 
-.path p,.resource p,.product p{
+.product p,.resource p{
   color:var(--muted);
   line-height:1.65;
-}
-
-.path ul{
-  padding-left:20px;
-  color:#4e5e55;
-  line-height:1.8;
 }
 
 .product.featured{
   background:linear-gradient(145deg,#fffaf1,#eadfca);
 }
 
-.product.relationship{border-top:5px solid #8d6b4f}
-.product.realestate{border-top:5px solid var(--green3)}
-.product.silver{border-top:5px solid var(--silver)}
-.product.trading{border-top:5px solid var(--blue)}
-.product.media{border-top:5px solid #7b6b8f}
+.relationship{border-top:5px solid #8d6b4f}
+.realestate{border-top:5px solid var(--green3)}
+.trading{border-top:5px solid #6d9dc5}
+.silver{border-top:5px solid var(--silver)}
+.media{border-top:5px solid #8c78a8}
+.wealth{border-top:5px solid var(--gold)}
 
 .product-buttons{
   display:flex;
@@ -261,30 +208,45 @@ button{
   margin-top:16px;
 }
 
-.library-map{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
-  gap:16px;
+.assistant-box{
+  background:var(--green);
+  color:white;
+  border-radius:24px;
+  padding:24px;
+  box-shadow:0 16px 36px rgba(20,40,30,.12);
 }
 
-.map-card{
-  background:linear-gradient(145deg,#fffaf1,#eadfca);
+.assistant-row{
+  display:flex;
+  gap:12px;
+  margin-bottom:16px;
+}
+
+input{
+  flex:1;
+  padding:15px;
   border:1px solid var(--line);
-  border-radius:20px;
-  padding:22px;
+  border-radius:12px;
+  font-size:16px;
+}
+
+button{
+  background:var(--gold);
+  color:#12251c;
+  border:0;
+  padding:15px 22px;
+  border-radius:12px;
+  font-weight:800;
   cursor:pointer;
 }
 
-.map-card h3{
-  margin:0 0 8px;
-  font-family:"Libre Baskerville",serif;
-}
-
-.map-card p{
-  margin:0;
-  color:var(--muted);
-  line-height:1.5;
-  font-size:.92rem;
+.assistant-answer{
+  background:#fffaf1;
+  color:var(--text);
+  padding:18px;
+  border-radius:16px;
+  line-height:1.7;
+  border-left:4px solid var(--gold);
 }
 
 .cover{
@@ -381,29 +343,9 @@ button{
   font-weight:700;
 }
 
-.assistant-box{
-  background:#0f3024;
-  color:white;
-  border-radius:24px;
-  padding:24px;
-}
-
-.assistant-box input{
-  background:#fffaf1;
-}
-
-.assistant-answer{
-  background:#fffaf1;
-  color:var(--text);
-  padding:18px;
-  border-radius:16px;
-  line-height:1.7;
-  border-left:4px solid var(--gold);
-}
-
 footer{
   background:var(--green);
-  color:#e7dcc6;
+  color:#f5ead3;
   text-align:center;
   padding:36px;
 }
@@ -411,7 +353,7 @@ footer{
 @media(max-width:850px){
   nav{display:none}
   main{width:92%}
-  .search-row{flex-direction:column}
+  .assistant-row{flex-direction:column}
 }
 </style>
 </head>
@@ -421,11 +363,9 @@ footer{
 <header>
   <div class="logo">Capital Library</div>
   <nav>
-    <a href="#published">Published</a>
-    <a href="#library">Library</a>
-    <a href="#paths">Paths</a>
-    <a href="#resources">Resources</a>
     <a href="#assistant">Assistant</a>
+    <a href="#hot-new">Hot & New</a>
+    <a href="#resources">Resources</a>
     <a href="#books">Books</a>
   </nav>
 </header>
@@ -434,14 +374,13 @@ footer{
   <div class="kicker">Wealth • Investing • Real Estate • Trading • Personal Growth</div>
   <h1>A real library for building knowledge and better decisions.</h1>
   <p>
-    Capital Library brings together published books, free public-domain reading,
-    learning paths, and practical resources focused on wealth building, investing,
-    real estate, trading education, business, economics, personal growth, hard assets,
-    independent media, and selected fiction classics.
+    Capital Library brings together books, free public-domain reading,
+    practical resources, market tools, real estate education, wealth-building resources,
+    creator media, and personal growth material.
   </p>
   <div class="hero-buttons">
-    <a href="#published" class="btn">View Published Books</a>
-    <a href="#assistant" class="btn light">Ask Library Assistant</a>
+    <a href="#assistant" class="btn">Ask Library Assistant</a>
+    <a href="#hot-new" class="btn light">See Hot & New</a>
   </div>
 </section>
 
@@ -451,20 +390,39 @@ footer{
   <div class="stat"><strong>Wealth</strong> Investing and money education</div>
   <div class="stat"><strong>Real Estate</strong> Property and cash-flow learning</div>
   <div class="stat"><strong>Trading</strong> Market analysis and active investing</div>
-  <div class="stat"><strong>Hard Assets</strong> Silver, metals and tangible assets</div>
+  <div class="stat"><strong>Growth</strong> Personal development and learning</div>
 </section>
 
-<section id="published">
+<section id="assistant">
   <div class="section-head">
-    <h2>Published Books & Resources</h2>
-    <p>Original books, guides and selected resources</p>
+    <h2>Library Assistant</h2>
+    <p>Ask what to study or explore next</p>
+  </div>
+
+  <div class="assistant-box">
+    <div class="assistant-row">
+      <input id="aiQuestion" placeholder="Ask: What should I study for real estate investing?" />
+      <button onclick="askAssistant()">Ask</button>
+    </div>
+
+    <div id="aiAnswer" class="assistant-answer">
+      Ask about wealth, investing, real estate, trading, stocks, crypto, silver, business, self-development, or media.
+    </div>
+  </div>
+</section>
+
+<section id="hot-new">
+  <div class="section-head">
+    <h2>Hot & New</h2>
+    <p>Books, memberships, tools and resources</p>
   </div>
 
   <div class="grid">
+
     <div class="product featured relationship">
       <div class="kicker">Self Development • Relationships</div>
       <h3>Oops, I Dated a Narcissist: How to Heal</h3>
-      <p>A personal-growth book for readers healing from emotional manipulation, rebuilding confidence, recognizing unhealthy relationship patterns, and moving forward with clarity.</p>
+      <p>A personal-growth book for readers healing from emotional manipulation, rebuilding confidence, and moving forward with clarity.</p>
       <div class="product-buttons">
         <a class="btn" href="https://www.amazon.com/Oops-Dated-Narcissist-Won-Heal-ebook/dp/B0GYSM6PK9" target="_blank">View on Amazon</a>
         <a class="btn light" href="https://danidoono.gumroad.com/l/hklbsx" target="_blank">Get Direct Copy</a>
@@ -474,25 +432,79 @@ footer{
     <div class="product featured realestate">
       <div class="kicker">Real Estate • Investing</div>
       <h3>Real Estate Investment Starter Guide</h3>
-      <p>A beginner-friendly resource for learning rental property basics, cash flow, ROI, cap rate, expenses, and how to review a deal before buying.</p>
+      <p>A beginner-friendly resource for learning rental property basics, cash flow, ROI, cap rate, expenses, and deal review.</p>
       <div class="product-buttons">
         <a class="btn" href="https://danidoono.gumroad.com/l/rfhxr" target="_blank">Open Resource</a>
       </div>
     </div>
 
     <div class="product featured trading">
+      <div class="kicker">Stock Education</div>
+      <h3>CNC Academy Membership</h3>
+      <p>Monthly stock-market learning membership for traders and investors looking for structured education and market guidance.</p>
+      <div class="product-buttons">
+        <a class="btn" href="https://tallguytycoon.gumroad.com/l/Pxkij?a=812339299" target="_blank">View Membership</a>
+      </div>
+    </div>
+
+    <div class="product featured trading">
+      <div class="kicker">Futures Trading</div>
+      <h3>Live Futures Educational Platform</h3>
+      <p>Education platform focused on futures markets, live market learning, trading concepts, and active-market development.</p>
+      <div class="product-buttons">
+        <a class="btn" href="https://simplemarketmetrics.gumroad.com/l/gpcfp?a=812339299" target="_blank">View Platform</a>
+      </div>
+    </div>
+
+    <div class="product featured trading">
+      <div class="kicker">Trading Tools</div>
+      <h3>Ninja Trader Wave Runner</h3>
+      <p>A trading tool connected to NinjaTrader users focused on market movement, wave structure, and active trading workflows.</p>
+      <div class="product-buttons">
+        <a class="btn" href="https://simplemarketmetrics.gumroad.com/l/jeiyj?a=812339299" target="_blank">View Tool</a>
+      </div>
+    </div>
+
+    <div class="product featured trading">
       <div class="kicker">Trading & Market Analysis</div>
       <h3>VIP RealTimeTrades ASX Stocks, Crypto & US Markets</h3>
-      <p>A monthly market resource with real-time trade alerts, stock and crypto analysis, market research, trading explanations, and community discussion.</p>
+      <p>Monthly market resource with trade alerts, stock and crypto analysis, market research, trading explanations, and community discussion.</p>
       <div class="product-buttons">
         <a class="btn" href="https://ruycorto.gumroad.com/l/gidjrr?a=812339299" target="_blank">View Membership</a>
+      </div>
+    </div>
+
+    <div class="product featured wealth">
+      <div class="kicker">Wealth Building</div>
+      <h3>Paycheck to Portfolio Membership</h3>
+      <p>A membership focused on helping learners move from earned income to portfolio-building, investing habits, and long-term financial growth.</p>
+      <div class="product-buttons">
+        <a class="btn" href="https://paycheckportfolio.gumroad.com/l/iescv?a=812339299" target="_blank">View Membership</a>
+      </div>
+    </div>
+
+    <div class="product featured wealth">
+      <div class="kicker">Faith & Financial Mastery</div>
+      <h3>The RED-E Society</h3>
+      <p>A financial education community focused on faith, discipline, financial mastery, and personal wealth development.</p>
+      <div class="product-buttons">
+        <a class="btn" href="https://rogers1906.gumroad.com/l/fcxjqn?a=812339299" target="_blank">View Society</a>
+      </div>
+    </div>
+
+    <div class="product featured wealth">
+      <div class="kicker">Wealth Transfer</div>
+      <h3>A Wealth Transfer Survival Manual</h3>
+      <p>A financial education manual about managing a wealth transfer wisely and avoiding common mistakes after receiving a blessing.</p>
+      <div class="product-buttons">
+        <a class="btn" href="https://realthomsieloff.gumroad.com/l/fkmgcn?a=812339299" target="_blank">View Manual</a>
       </div>
     </div>
 
     <div class="product featured silver">
       <div class="kicker">Silver & Hard Assets</div>
       <h3>To The Moon .999 Fine Silver Coin</h3>
-      <p>A five-count collectible silver coin set for readers interested in precious metals, tangible assets, collectibles, and alternative stores of value.</p>
+      <p>A five-count collectible silver coin set for readers interested in precious metals, tangible assets, collectibles, and stores of value.</p>
       <div class="product-buttons">
         <a class="btn" href="https://allpatriots.gumroad.com/l/tothemooncoinfivecount?layout=discover&recommended_by=search&_gl=1*m2iayq*_ga*MTQwNjkyNjkyNS4xNzgwMjQ4NDI5*_ga_6LJN6D94N6*czE3ODAyNDg0MjgkbzEkZzEkdDE3ODAyNTE4MTgkajMkbDAkaDA.&a=812339299" target="_blank">View Coin Collection</a>
       </div>
@@ -506,95 +518,39 @@ footer{
         <a class="btn" href="https://samhyde.gumroad.com/l/HydeWars?a=812339299" target="_blank">View Membership</a>
       </div>
     </div>
-  </div>
-</section>
 
-<section class="panel">
-  <div class="search-row">
-    <input id="searchInput" value="wealth" placeholder="Search wealth, investing, real estate, trading, business..." />
-    <button onclick="searchBooks()">Search Library</button>
-  </div>
-
-  <div class="chips">
-    <span class="chip" onclick="setCategory('wealth')">Wealth</span>
-    <span class="chip" onclick="setCategory('investing')">Investing</span>
-    <span class="chip" onclick="setCategory('real estate')">Real Estate</span>
-    <span class="chip" onclick="setCategory('trading')">Trading</span>
-    <span class="chip" onclick="setCategory('finance')">Finance</span>
-    <span class="chip" onclick="setCategory('economics')">Economics</span>
-    <span class="chip" onclick="setCategory('business')">Business</span>
-    <span class="chip" onclick="setCategory('leadership')">Leadership</span>
-    <span class="chip" onclick="setCategory('self help')">Self Help</span>
-    <span class="chip" onclick="setCategory('silver')">Silver & Hard Assets</span>
-    <span class="chip" onclick="setCategory('media')">Independent Media</span>
-    <span class="chip" onclick="setCategory('fiction')">Fiction Classics</span>
-  </div>
-</section>
-
-<section id="library">
-  <div class="section-head">
-    <h2>Library Sections</h2>
-    <p>Organized by learning goal</p>
-  </div>
-
-  <div class="library-map">
-    <div class="map-card" onclick="setCategory('wealth')"><h3>Wealth Building</h3><p>Money, ownership, discipline, capital, and long-term thinking.</p></div>
-    <div class="map-card" onclick="setCategory('investing')"><h3>Investing</h3><p>Markets, risk, financial decisions, and investment education.</p></div>
-    <div class="map-card" onclick="setCategory('real estate')"><h3>Real Estate</h3><p>Property, rent, ownership, cash flow, land, and practical deal thinking.</p></div>
-    <div class="map-card" onclick="setCategory('trading')"><h3>Trading & Market Analysis</h3><p>Market research, trading education, stock analysis, crypto insights, and strategies.</p></div>
-    <div class="map-card" onclick="setCategory('silver')"><h3>Silver & Hard Assets</h3><p>Precious metals, silver, collectibles, tangible assets, and stores of value.</p></div>
-    <div class="map-card" onclick="setCategory('business')"><h3>Business</h3><p>Enterprise, commerce, sales, management, and strategy.</p></div>
-    <div class="map-card" onclick="setCategory('economics')"><h3>Economics</h3><p>Markets, trade, incentives, labor, production, and society.</p></div>
-    <div class="map-card" onclick="setCategory('self help')"><h3>Self Development</h3><p>Discipline, healing, confidence, habits, mindset, and growth.</p></div>
-    <div class="map-card" onclick="setCategory('media')"><h3>Independent Media</h3><p>Creator content, commentary, podcasts, video libraries, and long-form media.</p></div>
-    <div class="map-card" onclick="setCategory('fiction')"><h3>Fiction Classics</h3><p>A smaller shelf for timeless stories and classic literature.</p></div>
-  </div>
-</section>
-
-<section id="paths">
-  <div class="section-head">
-    <h2>Learning Paths</h2>
-    <p>Course-style reading routes</p>
-  </div>
-
-  <div class="grid">
-    <div class="path"><h3>Wealth Foundations</h3><p>Learn money, saving, capital, ownership, and long-term thinking.</p><ul><li>Search: wealth</li><li>Search: finance</li><li>Search: economics</li></ul><a class="btn" onclick="setCategory('wealth')">Open Path</a></div>
-    <div class="path"><h3>Real Estate Basics</h3><p>Learn property language, cash flow, beginner deal review, and investment basics.</p><ul><li>Search: real estate</li><li>Use the starter guide</li><li>Compare deals with simple numbers</li></ul><a class="btn" onclick="setCategory('real estate')">Open Path</a></div>
-    <div class="path"><h3>Trading & Market Analysis</h3><p>Explore trading education, market research, chart reading, risk, stocks, and crypto.</p><ul><li>Search: trading</li><li>Search: stock market</li><li>Search: speculation</li></ul><a class="btn" onclick="setCategory('trading')">Open Path</a></div>
-    <div class="path"><h3>Hard Asset Basics</h3><p>Explore physical silver, precious metals, collectibles, and tangible assets.</p><ul><li>Search: silver</li><li>Learn about hard assets</li><li>Compare collectibility and value</li></ul><a class="btn" onclick="setCategory('silver')">Open Path</a></div>
-    <div class="path"><h3>Self Development</h3><p>For readers focused on mindset, healing, discipline, habits, and confidence.</p><ul><li>Read: Oops, I Dated a Narcissist</li><li>Search: self help</li><li>Search: success</li></ul><a class="btn" onclick="setCategory('self help')">Open Path</a></div>
   </div>
 </section>
 
 <section id="resources">
   <div class="section-head">
     <h2>Resource Desk</h2>
-    <p>Guides, tools, memberships and study systems</p>
+    <p>Organized by category</p>
   </div>
 
   <div class="grid">
-    <div class="resource"><div class="kicker">Capital Toolkit</div><h3>Real Estate Investment Starter Guide</h3><p>Learn income, expenses, cash flow, ROI, cap rate, and deal review.</p><a href="https://danidoono.gumroad.com/l/rfhxr" target="_blank" class="btn">Open Resource</a></div>
-    <div class="resource"><div class="kicker">Trading & Market Analysis</div><h3>VIP RealTimeTrades ASX Stocks, Crypto & US Markets</h3><p>Monthly membership covering trade alerts, market analysis, stock ideas, crypto insights, and active investing discussion.</p><a href="https://ruycorto.gumroad.com/l/gidjrr?a=812339299" target="_blank" class="btn">View Membership</a></div>
-    <div class="resource"><div class="kicker">Silver & Hard Assets</div><h3>To The Moon .999 Fine Silver Coin</h3><p>A five-count collectible .999 fine silver coin set connected to tangible wealth and hard assets.</p><a href="https://allpatriots.gumroad.com/l/tothemooncoinfivecount?layout=discover&recommended_by=search&_gl=1*m2iayq*_ga*MTQwNjkyNjkyNS4xNzgwMjQ4NDI5*_ga_6LJN6D94N6*czE3ODAyNDg0MjgkbzEkZzEkdDE3ODAyNTE4MTgkajMkbDAkaDA.&a=812339299" target="_blank" class="btn">View Coin Collection</a></div>
-    <div class="resource"><div class="kicker">Independent Media</div><h3>MDE.TV Premium Membership</h3><p>Original shows, podcasts, comedy content, creator commentary, and exclusive releases.</p><a href="https://samhyde.gumroad.com/l/HydeWars?a=812339299" target="_blank" class="btn">View Membership</a></div>
-    <div class="resource"><div class="kicker">Self Development</div><h3>Oops, I Dated a Narcissist</h3><p>A personal-growth book for readers focused on healing and emotional clarity.</p><a href="https://danidoono.gumroad.com/l/hklbsx" target="_blank" class="btn">Get the Book</a></div>
-    <div class="resource"><div class="kicker">Reader System</div><h3>Capital Notes</h3><p>Track ideas by category: income, assets, risk, market, management, mindset, discipline, and opportunity.</p></div>
-  </div>
-</section>
-
-<section id="assistant">
-  <div class="section-head">
-    <h2>Library Assistant</h2>
-    <p>Ask what to study next</p>
-  </div>
-
-  <div class="assistant-box">
-    <div class="search-row">
-      <input id="aiQuestion" placeholder="Ask: What should I read for real estate investing?" />
-      <button onclick="askAssistant()">Ask</button>
+    <div class="resource">
+      <div class="kicker">Real Estate</div>
+      <h3>Property Learning</h3>
+      <p>Start with rental property basics, cash flow, expenses, ROI, cap rate, and deal review.</p>
     </div>
-    <div id="aiAnswer" class="assistant-answer">
-      Ask about wealth, investing, real estate, trading, business, hard assets, self development, media, or fiction.
+
+    <div class="resource">
+      <div class="kicker">Trading</div>
+      <h3>Stocks, Futures & Crypto</h3>
+      <p>Explore stock education, futures platforms, trading tools, market analysis, and active investing resources.</p>
+    </div>
+
+    <div class="resource">
+      <div class="kicker">Wealth Building</div>
+      <h3>Portfolio & Financial Growth</h3>
+      <p>Resources focused on building from income to assets, financial discipline, and wealth transfer education.</p>
+    </div>
+
+    <div class="resource">
+      <div class="kicker">Self Development</div>
+      <h3>Healing & Personal Growth</h3>
+      <p>Books and resources focused on confidence, healing, relationships, mindset, and better decisions.</p>
     </div>
   </div>
 </section>
@@ -602,7 +558,7 @@ footer{
 <section id="hot">
   <div class="section-head">
     <h2>Most Read</h2>
-    <p>Sorted by public download count</p>
+    <p>Free public-domain books sorted by downloads</p>
   </div>
   <div id="hotItems" class="grid"></div>
 </section>
@@ -623,8 +579,48 @@ footer{
 
 <script>
 function setCategory(category){
-  document.getElementById("searchInput").value = category;
-  searchBooks();
+  searchBooks(category);
+}
+
+function askAssistant(){
+  const question = document.getElementById("aiQuestion").value.toLowerCase();
+  const answer = document.getElementById("aiAnswer");
+  let response = "";
+
+  if(question.includes("real estate") || question.includes("rental") || question.includes("property")){
+    response = "Start with Real Estate. Review the Real Estate Investment Starter Guide, then study cash flow, cap rate, expenses, and rental property basics.";
+    searchBooks("real estate");
+  }
+  else if(question.includes("stock") || question.includes("trading") || question.includes("futures") || question.includes("crypto") || question.includes("market")){
+    response = "Start with Trading & Market Analysis. Look at stock education, futures learning, market tools, and risk management before using active trading resources.";
+    searchBooks("stock market");
+  }
+  else if(question.includes("wealth") || question.includes("portfolio") || question.includes("money") || question.includes("finance")){
+    response = "Start with Wealth Building. Focus on income, assets, investing habits, financial discipline, and long-term portfolio growth.";
+    searchBooks("wealth");
+  }
+  else if(question.includes("silver") || question.includes("gold") || question.includes("coin") || question.includes("metal")){
+    response = "Visit Silver & Hard Assets. This category is for tangible assets, precious metals, collectibles, and stores of value.";
+    searchBooks("silver");
+  }
+  else if(question.includes("business") || question.includes("leadership")){
+    response = "Start with Business and Leadership. Study management, commerce, decision-making, and strategy.";
+    searchBooks("business");
+  }
+  else if(question.includes("narcissist") || question.includes("relationship") || question.includes("heal")){
+    response = "Start with Self Development. Oops, I Dated a Narcissist fits this category for healing, clarity, and confidence.";
+    searchBooks("self help");
+  }
+  else if(question.includes("media") || question.includes("podcast") || question.includes("video")){
+    response = "Independent Media includes creator content, commentary, podcasts, video libraries, and long-form entertainment.";
+    searchBooks("media");
+  }
+  else{
+    response = "Try Wealth Building, Real Estate, Trading, Stocks, Business, Self Development, or Silver & Hard Assets.";
+    searchBooks("wealth");
+  }
+
+  answer.innerHTML = response;
 }
 
 function clean(text){
@@ -638,50 +634,6 @@ function clean(text){
 function getAuthor(book){
   if(!book.authors || book.authors.length === 0) return "Unknown author";
   return book.authors.map(a => a.name).join(", ");
-}
-
-function askAssistant(){
-  const question = document.getElementById("aiQuestion").value.toLowerCase();
-  const answer = document.getElementById("aiAnswer");
-  let response = "";
-
-  if(question.includes("real estate") || question.includes("rental") || question.includes("property")){
-    response = "Start with Real Estate Basics. Use the Real Estate Investment Starter Guide, then search the library for real estate and property books.";
-    setCategory("real estate");
-  }
-  else if(question.includes("wealth") || question.includes("money") || question.includes("finance")){
-    response = "Start with Wealth Building. Focus on finance, economics, ownership, saving, and long-term capital thinking.";
-    setCategory("wealth");
-  }
-  else if(question.includes("trading") || question.includes("stock") || question.includes("crypto") || question.includes("market")){
-    response = "Go to Trading & Market Analysis. Study risk, speculation, market behavior, and decision-making before using any trading resource.";
-    setCategory("trading");
-  }
-  else if(question.includes("silver") || question.includes("gold") || question.includes("coin") || question.includes("metal")){
-    response = "Visit Silver & Hard Assets. This section is for precious metals, collectibles, tangible assets, and stores of value.";
-    setCategory("silver");
-  }
-  else if(question.includes("business") || question.includes("leadership")){
-    response = "Start with Business and Leadership. Read management, commerce, and strategy titles from the free library.";
-    setCategory("business");
-  }
-  else if(question.includes("narcissist") || question.includes("relationship") || question.includes("heal")){
-    response = "Visit Self Development. Your book Oops, I Dated a Narcissist fits this path.";
-    setCategory("self help");
-  }
-  else if(question.includes("media") || question.includes("podcast") || question.includes("video")){
-    response = "Visit Independent Media for creator content, commentary, podcasts, and long-form media resources.";
-    setCategory("media");
-  }
-  else if(question.includes("fiction") || question.includes("novel") || question.includes("story")){
-    response = "Visit Fiction Classics for timeless stories and classic literature.";
-    setCategory("fiction");
-  }
-  else{
-    response = "Try starting with Wealth Building, Investing, Real Estate, Trading, Business, or Self Development.";
-  }
-
-  answer.innerHTML = response;
 }
 
 function getCategory(book){
@@ -729,8 +681,7 @@ function bookCard(book, hot=false){
   `;
 }
 
-async function searchBooks(){
-  const query = document.getElementById("searchInput").value.trim() || "wealth";
+async function searchBooks(query="wealth"){
   const hotItems = document.getElementById("hotItems");
   const ebookList = document.getElementById("ebookList");
 
